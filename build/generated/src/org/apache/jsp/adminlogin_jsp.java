@@ -57,7 +57,7 @@ public final class adminlogin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            function check(form) { /*function to check userid & password*/\n");
       out.write("                /*the following code checkes whether the entered userid and password are matching*/\n");
       out.write("                if(form.user.value == \"subhanjan\" && form.pswrd.value == \"123456\") {\n");
-      out.write("                    window.open('target.html')/*opens the target page while Id & password matches*/\n");
+      out.write("                    window.open('adminprofile.jsp')/*opens the target page while Id & password matches*/\n");
       out.write("                }\n");
       out.write("                else {\n");
       out.write("                    alert(\"Error Password or Username\")/*displays error message*/\n");

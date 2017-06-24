@@ -58,7 +58,7 @@ div.tab button.active {
 
 body {
   padding : 10px ;
-  background-image: url(pics/tiles.jpg);
+  background-image: url(pics/tiles1.jpeg);
 }
 
 #exTab1 .tab-content {
