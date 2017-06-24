@@ -1,0 +1,182 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 8, 2017, 10:43:26 AM
+    Author     : Subhanjan
+*/
+
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: red; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+}
+
+#myBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+}
+h1{
+    color: black; 
+    text-align: center;
+    font-size: 300%;
+    font-family:Faster One;
+    
+}
+    .carousel-caption {
+    position: absolute;
+    top: 0;
+    align-items: center;
+    height: 100%;
+}
+h2{
+    font-family: Germania One;
+    text-align: center;
+}
+table{
+    color: black;
+    font-family: sofia;
+    font-weight: bold;
+    font-size: 165%;
+}
+h3{
+    font-family: Jacques Francois Shadow;
+    text-align: center;
+    font-size: 250%;
+}
+h4{
+    font-family: Germania One;
+    font-size: 150%;
+    color: brown
+}
+
+   img.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+body.cover{background:url(pics/b.jpg);
+background-attachment:scroll;
+background-size:700px;
+}
+div.learnmore{
+    text-align: center;
+    font-weight: bold;
+   
+}
+footer{
+    text-align: center;
+   color: white;
+   background-color: #333333;
+   font-family: arial;
+}
+div.title{
+    text-align: center;
+    background-color: blue;
+    font-weight: bold;
+    background-color:#ef5a28;
+    color: whitesmoke;
+}
+div.title1{
+     background-color: black;
+     text-align: center;
+     font-weight: bold;
+     color: white;
+}
+div.heading1{
+  
+    display: block;
+    margin-left: 50px;
+    margin-right: auto; 
+    font-size: 40px;
+    color: black;
+    font-family:Faster One;
+}
+
+
+div.perfect{
+    font-family: arial;
+   text-align: center;
+   font-size: 25px;
+   font-weight: bold;
+}
+    .img-circle {
+        border-radius: 50%;
+    }
+    div.inst{
+        text-align: center;
+        font-weight: bold;
+     font-size: 20px;
+    }
+     div.inst1{
+       
+        font-weight: bold;
+     font-size: 18px;
+    }
+    div.inspection{
+        text-align: center;
+        font-weight: bold;
+        font-size: 20px;
+    }
+  
+    /* Style the links inside the sidenav */
+#mySidenav a {
+    position: fixed; /* Position them relative to the browser window */
+    left: -80px; /* Position them outside of the screen */
+    transition: 0.3s; /* Add transition on hover */
+    padding: 15px; /* 15px padding */
+    width: 100px; /* Set a specific width */
+    text-decoration: none; /* Remove underline */
+    font-size: 20px; /* Increase font size */
+    color: white; /* White text color */
+    border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
+}
+
+#mySidenav a:hover {
+    left: 0; /* On mouse-over, make the elements appear as they should */
+}
+
+/* The about link: 20px from the top with a green background */
+#about {
+    top: 200px;
+    background-color: lightblue;
+}
+
+#blog {
+    top: 260px;
+    background-color: rosybrown; /* Blue */
+}
+
+#projects {
+    top: 320px;
+    background-color: wheat; /* Red */
+}
+
+#contact {
+    top: 380px;
+    background-color: #555 /* Light Black */
+}   
+
+
+img.maruti{
+    display: block;
+   margin-left: 50px
+}
+.navbar {
+  
+ display: block;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+

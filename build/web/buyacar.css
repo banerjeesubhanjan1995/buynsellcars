@@ -1,0 +1,227 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 15, 2017, 8:28:31 PM
+    Author     : Subhanjan
+*/
+
+/* Style the tab buttons */
+.navbar {
+    display: block;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.fa {
+    padding: 10px;
+    font-size: 30px;
+    width: 35px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 80%;
+}
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+
+body{
+background-attachment:scroll;
+background:url(pics/b1.jpg);
+}
+h1{
+    font-family: Tangerine;
+   font-weight: bold;
+   text-shadow: 4px 4px 4px #aaa;
+   font-size: 56px;
+}
+.navbar {
+  
+  top: 0;
+  width: 100%;
+}
+
+.pa-bottom {
+  padding-bottom: 30px;
+}
+
+.pos-top {
+  position: absolute;
+  top:50%;
+  margin-top:-14px;
+}
+
+ video{
+            width: 100%;
+            height: auto;
+        }
+ footer{
+    text-align: center;
+   color: white;
+   background-color: #333333;
+   font-family: arial;
+}
+
+#mySidenav a {
+    position: fixed; /* Position them relative to the browser window */
+    left: -80px; /* Position them outside of the screen */
+    transition: 0.3s; /* Add transition on hover */
+    padding: 15px; /* 15px padding */
+    width: 100px; /* Set a specific width */
+    text-decoration: none; /* Remove underline */
+    font-size: 20px; /* Increase font size */
+    color: white; /* White text color */
+    border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
+}
+
+#mySidenav a:hover {
+    left: 0; /* On mouse-over, make the elements appear as they should */
+}
+
+/* The about link: 20px from the top with a green background */
+#about {
+    top: 200px;
+    background-color: lightblue;
+}
+
+#blog {
+    top: 260px;
+    background-color: rosybrown; /* Blue */
+}
+
+#projects {
+    top: 320px;
+    background-color: wheat; /* Red */
+}
+
+#contact {
+    top: 380px;
+    background-color: #555 /* Light Black */
+} 
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: red; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+}
+
+#myBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+}
+h2{
+    text-align: center;
+    font-family: Faster One;
+    font-size: 40px;
+}
+@media (min-width: 140px) and (max-width: 480px){
+.carousel-indicators {
+bottom: -5px;
+}
+}
+
+@media (min-width: 481px) and (max-width: 767px){
+.carousel-indicators {
+bottom: 5px;
+}
+}
+
+
+.media-carousel-xs, .media-carousel-up {
+margin-bottom: 0;
+padding: 15px;
+border: 1px solid #e5e5e5;
+}
+
+
+
+#media-up .thumbnail,
+#media-xs .thumbnail{
+margin-bottom:0;
+}
+
+.media-carousel-xs,
+.media-carousel-up
+{
+  margin-bottom: 0;
+  padding: 15px;
+  border: 1px solid #e5e5e5;
+}
+/* Previous button  */
+.media-carousel-xs .carousel-control.left,
+.media-carousel-up .carousel-control.left
+{
+  left: -12px;
+  background-image: none;
+  background: none repeat scroll 0 0 #eee;
+  border: 0 solid #FFFFFF;
+  border-radius: 23px 23px 23px 23px;
+  height: 22px;
+  width : 22px;
+  top: 50%;
+  margin-top: -10px;
+}
+/* Next button  */
+.media-carousel-xs .carousel-control.right,
+.media-carousel-up .carousel-control.right
+{
+  right: -12px !important;
+  background-image: none;
+  background: none repeat scroll 0 0 #eee;
+  border: 0 solid #FFFFFF;
+  border-radius: 23px 23px 23px 23px;
+  height: 22px;
+  width : 22px;
+  top: 50%;
+  margin-top: -10px;
+}
+
+#media-xs .carousel-control,
+#media-up .carousel-control{
+position: absolute;
+bottom: 0;
+font-size: 14px;
+color: #808080;
+text-shadow: 0 0 0;
+opacity: 1;
+filter: alpha(opacity=100);
+}
+
+.media-carousel-xs .carousel-control:hover,.media-carousel-xs .carousel-control:focus,
+.media-carousel-up .carousel-control:hover,.media-carousel-up .carousel-control:focus{
+color: #808080;
+}
