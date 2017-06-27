@@ -33,8 +33,8 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-          <li><a href="index.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HOME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
-          <li><a href="buyacar.jsp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BUY A CAR</a></li>
+          <li><a href="index.jsp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HOME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+          <li><a href="buyacar.jsp">&nbsp;&nbsp;BUY A CAR</a></li>
     <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
         <span class="caret"></span></a>
@@ -45,13 +45,13 @@
           <li><a href="tata.jsp">TATA</a></li>
         </ul>
       </li>
-       <li><a href="sellacar.jsp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SELL CAR &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
-        <li><a href="aboutus.jsp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ABOUT US&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
-        <li><a href="contactus.jsp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CONTACT US&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+       <li><a href="sellacar.jsp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SELL CAR &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+        <li><a href="aboutus.jsp">ABOUT US&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+        <li><a href="contactus.jsp">&nbsp;CONTACT US&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+     <li><a href="logout.jsp">&nbsp;LOG OUT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="signup.jsp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="signup.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a>WELCOME, <%=session.getAttribute("name")%></a></li> 
       </ul>     
     </div>
   </div>
@@ -201,8 +201,8 @@ btn.onclick = function() {
         &nbsp;&nbsp;&nbsp;&nbsp;<img src="alto/mil1.png">&nbsp;&nbsp;&nbsp;&nbsp;<img src="alto/mil.png">
     </div>
       <div class="col-sm-6"><br>
-         <button class="button9 button4" onclick="window.open('bookacar.jsp')">BOOK NOW</button>&nbsp;&nbsp;&nbsp;&nbsp;
-         <button class="button9 button4" onclick="window.open('testdrive.jsp')">BOOK A TEST DRIVE</button>
+         <button class="button9 button4" onclick="location.reload();location.href='bookacar.jsp'">BOOK NOW</button>&nbsp;&nbsp;&nbsp;&nbsp;
+         <button class="button9 button4" onclick="location.reload();location.href='testdrive.jsp'">BOOK A TEST DRIVE</button>
       </div></div></div>
         
                 <div id="myCarousel1" class="carousel slide" data-ride="carousel">
@@ -595,8 +595,8 @@ btn.onclick = function() {
         &nbsp;&nbsp;&nbsp;&nbsp;<img src="alto/milk10.png" height="80px" width="350px">
     </div>
       <div class="col-sm-6"><br><br>
-         <button class="button9 button4" onclick="window.open('signup.jsp')">BOOK NOW</button>&nbsp;&nbsp;&nbsp;&nbsp;
-         <button class="button9 button4" onclick="window.open('testdrive.jsp')">BOOK A TEST DRIVE</button>
+         <button class="button9 button4" onclick="location.reload();location.href='bookacar.jsp'">BOOK NOW</button>&nbsp;&nbsp;&nbsp;&nbsp;
+         <button class="button9 button4" onclick="location.reload();location.href='testdrive.jsp'">BOOK A TEST DRIVE</button>
       </div></div></div>
         
                 <div id="myCarousel2" class="carousel slide" data-ride="carousel">
@@ -987,8 +987,8 @@ btn.onclick = function() {
 </div>
     </div>
       <div class="col-sm-6"><br><br>
-         <button class="button9 button4" onclick="window.open('signup.jsp')">BOOK NOW</button>&nbsp;&nbsp;&nbsp;&nbsp;
-         <button class="button9 button4" onclick="window.open('testdrive.jsp')">BOOK A TEST DRIVE</button>
+         <button class="button9 button4" onclick="location.reload();location.href='bookacar.jsp'">BOOK NOW</button>&nbsp;&nbsp;&nbsp;&nbsp;
+         <button class="button9 button4" onclick="location.reload();location.href='testdrive.jsp'">BOOK A TEST DRIVE</button>
       </div></div></div>
         
                 <div id="myCarousel3" class="carousel slide" data-ride="carousel">

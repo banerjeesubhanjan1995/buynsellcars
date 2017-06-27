@@ -13,55 +13,37 @@
          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script>
-            $(document).ready(function () {
+         <script type="text/javascript">
+var state_arr = new Array("MARUTI SUZUKI", "RENAULT", "HYUNDAI", "TATA");
 
-    var navListItems = $('div.setup-panel div a'),
-            allWells = $('.setup-content'),
-            allNextBtn = $('.nextBtn');
+var s_a = new Array();
+s_a[0]="";
+s_a[1]="ALTO 800|ALTO K10|CELERIO|WAGON R|RITZ|SWIFT|DZIRE|ERTIGA|VITARA BREZZA|S-CROSS|CIAZ|BALENO RS|BALENO|IGNIS";
+s_a[2]="KWID 1.0|DUSTER|LODGY|SCALA|PULSE";
+s_a[3]="EON|i10|GRAND i10|ELITE i20|XCENT|i20 ACTIVE|VERNA|CRETA|ELANTRA|TUCSON|SANTA FE";
+s_a[4]="GENX NANO|TIAGO|TIGOR|BOLT|INDICA|INDIGO|ZEST|HEXA|SAFARI STORME";
+function print_state(state){
+    //given the id of the <select> tag as function argument, it inserts <option> tags
+    var option_str = document.getElementById(state);
+    option_str.length=0;
+    option_str.options[0] = new Option('Select Car Company','');
+    option_str.selectedIndex = 0;
+    for (var i=0; i<state_arr.length; i++) {
+    option_str.options[option_str.length] = new Option(state_arr[i],state_arr[i]);
+    }
+};
 
-    allWells.hide();
-
-    navListItems.click(function (e) {
-        e.preventDefault();
-        var $target = $($(this).attr('href')),
-            $item = $(this);
-        if (!$item.hasClass('disabled')) {        
-            //navListItems.removeClass('btn-primary').addClass('btn-default');
-            if($item.attr('id')!==$(navListItems[1]).attr('id'))
-            {
-                $(navListItems[1]).removeClass('btn-primary').addClass('btn-success');
-            }
-            //$('#item3').addClass('btn-success');
-            $item.addClass('btn-primary');
-            allWells.hide();
-            $target.show();
-            $target.find('input:eq(0)').focus();
-        }
-    });
-
-    allNextBtn.click(function(){
-        var curStep = $(this).closest(".setup-content"),
-            curStepBtn = curStep.attr("id"),
-            nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
-            curInputs = curStep.find("input[type='text'],input[type='url'], input[type='password'], input[type='email']"),
-            isValid = true;
-
-        $(".form-group").removeClass("has-error");
-        for(var i=0; i<curInputs.length; i++){
-            if (!curInputs[i].validity.valid){
-                isValid = false;
-                $(curInputs[i]).closest(".form-group").addClass("has-error");
-            }
-        }
-
-        if (isValid)
-            nextStepWizard.removeAttr('disabled').trigger('click');
-    });
-     $('div.setup-panel div a.btn-primary').trigger('click');
-});
-
-        </script>
+function print_city(city, selectedIndex){
+    var option_str = document.getElementById(city);
+    option_str.length=0;    // Fixed by Julian Woods
+    option_str.options[0] = new Option('Select Car Model','');
+    option_str.selectedIndex = 0;
+    var city_arr = s_a[selectedIndex].split("|");
+    for (var i=0; i<city_arr.length; i++) {
+    option_str.options[option_str.length] = new Option(city_arr[i],city_arr[i]);
+    }
+}
+</script>
         <style>
 .stepwizard-step p {
     margin-top: 10px;
@@ -121,6 +103,7 @@
    box-shadow:inset 0px 0px 0px 3px #fff !important;
       background-color:#428bca;
 }
+
         </style>
     </head>
     <body>
@@ -137,8 +120,8 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-          <li><a href="index.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HOME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
-          <li class="active"><a href="buyacar.jsp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BUY A CAR</a></li>
+          <li><a href="index.jsp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HOME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+          <li class="active"><a href="buyacar.jsp">BUY A CAR</a></li>
     <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
         <span class="caret"></span></a>
@@ -149,115 +132,70 @@
           <li><a href="tata.jsp">TATA</a></li>
         </ul>
       </li>
-       <li><a href="sellacar.jsp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SELL CAR &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
-        <li><a href="aboutus.jsp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ABOUT US&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
-        <li><a href="contactus.jsp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CONTACT US&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+       <li><a href="sellacar.jsp"> SELL CAR &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+        <li><a href="aboutus.jsp">ABOUT US&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+        <li><a href="contactus.jsp">CONTACT US&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+    <li><a href="logout.jsp">LOG OUT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="signup.jsp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="signup.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a>WELCOME, <%=session.getAttribute("name")%></a></li> 
       </ul>     
     </div>
   </div>
          </nav> 
-        <br><br>
+       
        <div class="container">
 <div class="stepwizard">
     <div class="stepwizard-row setup-panel">
         <div class="stepwizard-step">
-            <a href="#VerifyEmail-step" type="button"  class="btn btn-success btn-circle" disabled="disabled" >
-                <span class="glyphicon glyphicon-envelope"></span>
-            </a>
-            <p>Verify Email</p>
-        </div>
-        <div class="stepwizard-step">
             <a href="#ProfileSetup-step" type="button" class="btn btn-primary btn-circle"  id="ProfileSetup-step-2">
                 <span class="glyphicon glyphicon-user"></span>
             </a>
-            <p>Profile Setup</p>
+            <p>Book A Car</p>
         </div>
-        <div class="stepwizard-step">
-            <a href="#Security-Setup-step" type="button"  class="btn btn-success-2 btn-circle" disabled="disabled" id="Security-Setup-step-3">
-                <span class="glyphicon glyphicon-ok"></span>
-            </a>
-            <p>Security Setup</p>
-        </div>
+        
     </div>
 </div>
-<form role="form">
-    <div class="row setup-content" id="VerifyEmail-step">
-        <div class="col-xs-12">
-            <div class="col-md-12">
-                 <br/>
-                <div class="form-horizontal">
-                    <form  role="form">
-                        <fieldset>
-                          <legend>Enter Your Email Information</legend>
-                          <br/>
-                          <div class="form-group">
-                            <label class="col-sm-3 control-label" for="card-holder-name">Your Email</label>
-                            <div class="col-sm-9">
-                              <input  maxlength="100" type="email" required="required" class="form-control" placeholder="Enter Email"  />
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="col-sm-3 control-label" for="card-number">Password</label>
-                            <div class="col-sm-9">
-                             <input  maxlength="100" type="password" required="required" class="form-control" placeholder="Enter Password"  />
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="col-sm-3 control-label" for="card-number">Re-enter Password</label>
-                            <div class="col-sm-9">
-                             <input  maxlength="100" type="password" required="required" class="form-control" placeholder="Enter Password"  />
-                            </div>
-                          </div>
-                        </fieldset>
-                    </form>
-                </div>
-                <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Setup Profile</button>
-            </div>
-        </div>
-    </div>
+<form action="hello3.jsp" method="post" role="form">
     <div class="row setup-content" id="ProfileSetup-step">
         <div class="col-xs-12">
             <div class="col-md-12">
-                 <br/>
+                 
                 <div class="form-horizontal">
-                    <form  role="form">
-                        <fieldset>
+                   
+                     
                       
-                          <legend>Enter Your Profile Information</legend>
+                          <legend>Enter Your Information</legend>
                           <br/>
                           <div class="form-group">
                             <label class="col-sm-3 control-label" for="card-holder-name">Your Email</label>
                             <div class="col-sm-9">
-                              <input  maxlength="100" type="text" required="required" class="form-control" placeholder="Enter Email"  />
+                                <input name="email"  maxlength="100" type="text" class="form-control" placeholder="Enter Email"  />
                             </div>
                           </div>
                           <div class="form-group">
                             <label class="col-sm-3 control-label" for="card-number">Name</label>
                             <div class="col-sm-9">
-                             <input maxlength="100" type="text" required="required" class="form-control" placeholder="Enter Name" />
+                             <input name="name" maxlength="100" type="text" class="form-control" placeholder="Enter Name" />
                             </div>
                           </div>
                           <div class="form-group">
-                            <label class="col-sm-3 control-label" for="card-number">Primary Phone Number</label>
+                            <label class="col-sm-3 control-label" for="card-number">Phone Number</label>
                             <div class="col-sm-9">
-                             <input maxlength="100" type="text" required="required" class="form-control" placeholder="Enter Primary Phone Number" />
+                                <input name="phoneno" maxlength="100" type="text" class="form-control" placeholder="Enter Primary Phone Number" />
                             </div>
                           </div>
                           <div class="form-group">
                             <label class="col-sm-3 control-label" for="card-number">Address</label>
                             <div class="col-sm-9">
-                             <input maxlength="100" type="text" required="required" class="form-control" placeholder="Enter Address" />
+                                <input name="address" maxlength="100" type="text" class="form-control" placeholder="Enter Address" />
                             </div>
                           </div>
                           <div class="col-lg-6">
                                <div class="form-group">
                                     <label class="col-sm-6 control-label" for="card-number">City</label>
                                     <div class="col-sm-6" style="padding-left:8px">
-                                     <input maxlength="100" type="text" required="required" class="form-control" placeholder="Enter City" />
+                                        <input name="city" maxlength="100" type="text" class="form-control" placeholder="Enter City" />
                                     </div>
                                   </div>
                           </div>
@@ -265,111 +203,32 @@
                                <div class="form-group">
                                     <label class="col-sm-6 control-label" for="card-number">State/Province</label>
                                     <div class="col-sm-6" style="padding:0px">
-                                     <input maxlength="100" type="text" required="required" class="form-control" placeholder="Enter State/Province" />
+                                        <input name="state" maxlength="100" type="text" class="form-control" placeholder="Enter State/Province" />
                                     </div>
                                   </div>
                           </div>
                           <div class="form-group">
-                            <label class="col-sm-3 control-label" for="card-number">Country</label>
+                            <label class="col-sm-3 control-label" for="card-number">Select Car Company</label>
                             <div class="col-sm-9">
-                             <select required="required" class="form-control" >
-                                  <option value="0">Select Country</option>
-                                 <option value="pakistan">Pakistan</option>
-                                 <option value="usa">USA</option>
-                             </select>
+                                        <select name="carcompany" class="form-control" onchange="print_city('city',this.selectedIndex);" id="state" name ="state"></select>
                             </div>
-                          </div>
-                        </fieldset>
-                    </form>
-                </div>
-                <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Setup Profile</button>
-            </div>
-        </div>
+                            </div>
+                         
+                          <div class="form-group">
+                            <label class="col-sm-3 control-label" for="card-number">Select Car Model</label>
+                            <div class="col-sm-9">
+                             <select name="carmodel"class="form-control" name ="city" id ="city"></select>
+                                     <script language="javascript">print_state("state");</script>
+                            </div>
+           </div>
+            
+                    <input type="submit" class="btn btn-primary nextBtn btn-lg pull-right" value="BOOK NOW"/>
+             
+                          
+                </div></div></div></div>
+       </form>
+
+    
     </div>
-    <div class="row setup-content" id="Security-Setup-step">
-        <div class="col-xs-12">
-            <div class="col-md-12">
-                <b>Thanks you  <stong>Muneeb Ashraf</stong></b>
-                <p>We are almost done, please enter the following information so we can recover your account in case you ever forget your password.</p>
-                
-                <div class="form-horizontal">
-                    <form  role="form">
-                        <fieldset>
-                          <br/>
-                          <div class="form-group">
-                            <label class="col-sm-3 control-label" for="card-holder-name">Security Question 1:</label>
-                            <div class="col-sm-9">
-                              <select required="required" class="form-control" >
-                                  <option value="0">Select Country</option>
-                                 <option value="pakistan">Pakistan</option>
-                                 <option value="usa">USA</option>
-                             </select>
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="col-sm-3 control-label" for="card-number">Your Answer:</label>
-                            <div class="col-sm-9">
-                             <input maxlength="100" type="text" required="required" class="form-control" placeholder="Enter Name" />
-                            </div>
-                          </div>
-                          <br/>
-                          <hr>
-                          <br/>
-                          <div class="form-group">
-                            <label class="col-sm-3 control-label" for="card-holder-name">Security Question 2:</label>
-                            <div class="col-sm-9">
-                              <select required="required" class="form-control" >
-                                  <option value="0">Select Country</option>
-                                 <option value="pakistan">Pakistan</option>
-                                 <option value="usa">USA</option>
-                             </select>
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="col-sm-3 control-label" for="card-number">Your Answer:</label>
-                            <div class="col-sm-9">
-                             <input maxlength="100" type="text" required="required" class="form-control" placeholder="Enter Name" />
-                            </div>
-                          </div>
-                           <br/>
-                          <hr>
-                          <br/>
-                          <div class="form-group">
-                            <label class="col-sm-3 control-label" for="card-holder-name">Security Question 3:</label>
-                            <div class="col-sm-9">
-                              <select required="required" class="form-control" >
-                                  <option value="0">Select Country</option>
-                                 <option value="pakistan">Pakistan</option>
-                                 <option value="usa">USA</option>
-                             </select>
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="col-sm-3 control-label" for="card-number">Your Answer:</label>
-                            <div class="col-sm-9">
-                             <input maxlength="100" type="text" required="required" class="form-control" placeholder="Enter Name" />
-                            </div>
-                          </div>
-                           <br/>
-                          <hr>
-                          <br/>
-                          <div class="form-group">
-                            <label class="col-sm-3 control-label" for="card-number">Recover cellphone Number:</label>
-                            <div class="col-sm-9">
-                             <input maxlength="100" type="text" required="required" class="form-control" placeholder="Enter Cellphone Number" />
-                             <p>Optional: We may send you a recovery code on this phone number if you are ever unable to lgoin to your account.</p>
-                            </div>
-                            
-                          </div>
-                        </fieldset>
-                    </form>
-                </div>
-                <!--h3> You are all set!</h3>
-                <p>Welcome to MetroPago. We are glade to have you here.</p-->
-                <button class="btn btn-primary btn-lg pull-right nextBtn" type="submit">Complete Registration</button>
-            </div>
-        </div>
-    </div>
-</form>
     </body>
 </html>

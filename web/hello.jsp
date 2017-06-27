@@ -10,19 +10,24 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>SignUp Successfully</title>
+        <style>
+            body{
+
+background-attachment:scroll;
+background:url(pics/sign.jpg);
+background-size: 1365px;
+}
+        </style>
     </head>
     
     <h1 align="center">SignUp Successfully</h1> 
-    <p align="center"><a href="signup.jsp">Click here</a> to login to your account.</p>
-    <p align="center"><a href="index.html">Click here</a> to go to HOME.</p>
+    <p align="center"><a href="home.jsp">Click here</a> to login to your account.</p>
+    <center> <img src="pics/signup.png"></center>
         <jsp:useBean id="myBean" scope="session" class="org.geeks.second"/>
-        <jsp:setProperty name="myBean" property="fname"/>
-        <jsp:setProperty name="myBean" property="lname"/>
-        <jsp:setProperty name="myBean" property="loginid"/>
+        <jsp:setProperty name="myBean" property="name"/>
         <jsp:setProperty name="myBean" property="email"/>
         <jsp:setProperty name="myBean" property="password"/>
         <jsp:setProperty name="myBean" property="dateofbirth"/> 
-        <jsp:setProperty name="myBean" property="gender"/>
          <jsp:setProperty name="myBean" property="phoneno"/>
        <%-- <table border="1">
               <thead>

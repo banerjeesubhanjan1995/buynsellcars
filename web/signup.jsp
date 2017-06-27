@@ -13,8 +13,8 @@
         <title>Login and Sign Up Form</title>
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 		<link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-		<link rel="stylesheet" href="signup.css">
-               
+                <link rel="stylesheet" href="signup.css">
+            
                 <script type="text/javascript">
 
 function passwordStrength(password)
@@ -81,46 +81,21 @@ function passwordStrength(password)
 function show()
 {
 var status=true;
-status = status && checkFNAME();
-status = status && checkLNAME();
-status = status && checkLOGINID();
+status = status && checkNAME();
 status = status && checkEMAIL();
 status = status && checkPASSWORD();
 status = status && checkDATEOFBIRTH();
-status = status && checkGENDER();
 status = status && checkPHONENO();
 
 return status;
 }
-function checkFNAME()
+function checkNAME()
 {
-var str = document.loginForm.fname.value;
+var str = document.loginForm.name.value;
 if(str==="")
 {
-alert("First Name cannot be blank , Please enter your First name");
-document.loginForm.fname.focus();
-return false;
-}
-return true;
-}
-function checkLNAME()
-{
-var str = document.loginForm.lname.value;
-if(str==="")
-{
-alert("Last Name cannot be blank , Please enter your Last name");
-document.loginForm.lname.focus();
-return false;
-}
-return true;
-}
-function checkLOGINID()
-{
-var str = document.loginForm.loginid.value;
-if(str==="")
-{
-alert("Login ID cannot be blank , Please enter your Login ID");
-document.loginForm.loginid.focus();
+alert("Name cannot be blank , Please enter your Name");
+document.loginForm.name.focus();
 return false;
 }
 return true;
@@ -167,21 +142,10 @@ return false;
 }
 return true;
 }
-function checkGENDER()
-{
-var str=document.loginForm.gender.value;
-if(str==="")
-{
-alert("Please Select Gender");
-document.loginForm.gender.focus();
-return false;
-}
-return true;
-}
 function checkPHONENO()
 {
 var str = document.loginForm.phoneno.value;
-if(str==="")
+if(str===""&&str!==10)
 {
 alert("Mobile Number cannot be blank , Please enter your Mobile/Phone Number");
 document.loginForm.phoneno.focus();
@@ -281,10 +245,6 @@ return true;
     </head>
     <body>
         <div class="container">
-           
-            <header>
-                <h1>Login and Sign Up Form</h1>		
-            </header>
             <section>				
                 <div id="container_demo" >
                     
@@ -292,44 +252,13 @@ return true;
                     <a class="hiddenanchor" id="tologin"></a>
                     <div id="wrapper">
                         <div id="login" class="animate form">
-                            <form  action="hello.jsp" autocomplete="on"> 
-                                <h1>Log in</h1> 
-                                <p> 
-                                    <label for="username" class="uname"  > Your email or username </label>
-                                    <input id="username" name="username" required="required" type="text" placeholder="myusername or mymail@mail.com"/>
-                                </p>
-                                <p> 
-                                    <label for="password" class="youpasswd"> Your password </label>
-                                    <input id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO" /> 
-                                </p>
-                                <p class="keeplogin"> 
-									<input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" /> 
-									<label for="loginkeeping">Keep me logged in</label>
-								</p>
-                                <p class="login button"> 
-                                   <a href="#" target="_blank" ></a>
-								</p>
-                                <p class="change_link">
-									Not a member yet ?
-									<a href="#toregister" class="to_register">Join us</a>
-								</p>
-                            </form>
-                        </div>
-
-                        <div id="register" class="animate form">
+                           
                             <form id="loginForm" name="loginForm" action="hello.jsp" autocomplete="on" method="post" onsubmit="return show()"/>
                                 <h1> Sign up </h1> 
+                               
                                 <p> 
-                                    <label for="firstname" class="fname" >First Name</label>
-                                    <input id="fname" name="fname"  type="text"  placeholder="Enter your First Name" />
-                                </p>
-                                <p> 
-                                    <label for="lastname" class="lname" >Last Name</label>
-                                    <input id="lastname" name="lname"  type="text" placeholder="Enter your Last Name" />
-                                </p>
-                                <p> 
-                                    <label for="loginid" class="loginid" >Your Login Id</label>
-                                    <input id="loginid" name="loginid"  type="text" placeholder="mysuperusername690" />
+                                    <label for="lastname" class="lname" > Name</label>
+                                    <input id="lastname" name="name"  type="text" placeholder="Enter your Name" />
                                 </p>
                                 <p> 
                                     <label for="email" class="email"  > Your email</label>
@@ -355,31 +284,22 @@ return true;
                         <input type="date" id="birthDate" class="form-control" name="dateofbirth">
                     </div>
                                 </p>             
-  <label for="gender" >Gender </label>&nbsp;&nbsp;&nbsp;&nbsp;
-<select name="gender" >
-<option value="" selected="selected">Select</option>
-<option value="Male">Male</option>
-<option value="Female">Female</option>
-</select>   
                    
-  <p><br>
+  <p>
       
                                     <label for="phoneno" class="phoneno" >Mobile Phone No </label>
-                                    <input id="phoneno" name="phoneno" type="text" placeholder="eg. 9965867458"/>
+                                    <input id="phoneno" pattern="[0-9]{10}" name="phoneno" type="text" placeholder="eg. 9965867458"/>
                                 </p>  
                                 <p class="signin button"> 
                   
 									<input type="submit" value="Sign up"/> 
 								</p>
-                                <p class="change_link">  
-									Already a member ?
-									<a href="#tologin" class="to_register"> Go and log in </a>
-								</p>
+                              
                             </form> 
                         </div>
 						
                     </div>
-                </div>  
+                    </div>  </div>
             </section>
         </div>
     </body>

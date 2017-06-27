@@ -15,62 +15,29 @@ import java.sql.SQLException;
  * @author Subhanjan
  */
 public class second {
-    private String fname;
-    private String lname;
-    private String loginid;
+    private String name;
     private String email;
     private String password;
     private String dateofbirth;
-    private String gender;
-    private String age;
     private String phoneno;
     /**
      * @return the fname
      */
-    public String getFname() {
-        return fname;
+    public String getName() {
+        return name;
     }
 
     /**
-     * @param fname the fname to set
+  
+     * @param name the fname to set
      */
-    public void setFname(String fname) {
-        this.fname = fname;
+    public void setName(String name) {
+        this.name = name;
     }
       /**
      * @return the lname
      */
-    public String getLname() {
-        return lname;
-    }
 
-    /**
-     * @param lname the lname to set
-     */
-    public void setLname(String lname) {
-        this.lname = lname;
-    }
-
-    /**
-     * @return the name
-     */
-    /**
-     * @return the username
-     */
-    public String getLoginid() {
-        return loginid;
-    }
-
-    /**
-     * @param loginid the username to set
-     */
-    public void setLoginid(String loginid) {
-        this.loginid = loginid;
-    }
-
-    /**
-     * @return the email
-     */
     public String getEmail() {
         return email;
     }
@@ -107,19 +74,6 @@ public class second {
     public void setDateofbirth(String dateofbirth) {
         this.dateofbirth = dateofbirth;
     }
-    /**
-     * @return the gender
-     */
-    public String getGender() {
-        return gender;
-    }
-
-    /**
-     * @param gender the gender to set
-     */
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
   /**
      * @return the phoneno
      */
@@ -138,15 +92,12 @@ public class second {
        Class.forName("org.apache.derby.jdbc.ClientDriver");
        String url="jdbc:derby://localhost:1527/autowings;create=true;user=autowings;password=autowings";
    Connection con= DriverManager.getConnection(url);
-   PreparedStatement ps= con.prepareStatement("insert into autowings(fname,lname,loginid,email,password,dateofbirth,gender,phoneno) values(?,?,?,?,?,?,?,?)");
-   ps.setString(1, getFname());
-    ps.setString(2, getLname());
-   ps.setString(3, getLoginid());
-   ps.setString(4, getEmail());
-   ps.setString(5, getPassword());
-    ps.setString(6, getDateofbirth());
-  ps.setString(7, getGender()); 
-  ps.setString(8, getPhoneno());
+   PreparedStatement ps= con.prepareStatement("insert into signup(name,email,password,dateofbirth,phoneno) values(?,?,?,?,?)");
+   ps.setString(1, getName());
+   ps.setString(2, getEmail());
+   ps.setString(3, getPassword());
+    ps.setString(4, getDateofbirth());
+  ps.setString(5, getPhoneno());
    int a=ps.executeUpdate();
    
    if(a==1){

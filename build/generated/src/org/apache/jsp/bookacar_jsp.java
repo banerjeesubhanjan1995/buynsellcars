@@ -176,7 +176,7 @@ public final class bookacar_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    </div>\n");
       out.write("    <div class=\"collapse navbar-collapse\" id=\"myNavbar\">\n");
       out.write("      <ul class=\"nav navbar-nav\">\n");
-      out.write("          <li><a href=\"index.html\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HOME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>\n");
+      out.write("          <li><a href=\"index.jsp\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HOME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>\n");
       out.write("          <li class=\"active\"><a href=\"buyacar.jsp\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BUY A CAR</a></li>\n");
       out.write("    <li class=\"dropdown\">\n");
       out.write("        <a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">\n");
@@ -191,10 +191,12 @@ public final class bookacar_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("       <li><a href=\"sellacar.jsp\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SELL CAR &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>\n");
       out.write("        <li><a href=\"aboutus.jsp\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ABOUT US&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>\n");
       out.write("        <li><a href=\"contactus.jsp\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CONTACT US&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>\n");
+      out.write("    <li><a href=\"logout.jsp\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LOG OUT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>\n");
       out.write("      </ul>\n");
       out.write("      <ul class=\"nav navbar-nav navbar-right\">\n");
-      out.write("        <li><a href=\"signup.jsp\"><span class=\"glyphicon glyphicon-user\"></span> Sign Up</a></li>\n");
-      out.write("        <li><a href=\"signup.jsp\"><span class=\"glyphicon glyphicon-log-in\"></span> Login</a></li>\n");
+      out.write("        <li><h4>Welcome, ");
+      out.print(session.getAttribute("name"));
+      out.write("</h4></li> \n");
       out.write("      </ul>     \n");
       out.write("    </div>\n");
       out.write("  </div>\n");

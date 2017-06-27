@@ -108,16 +108,17 @@ body {
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-          <li><a href="index.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HOME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+          <li><a href="index.jsp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HOME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
         
       
-       <li><a href="buyacar.jsp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BUY A CAR &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
-       <li><a href="sellacar.jsp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SELL CAR &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
-        <li><a href="aboutus.jsp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ABOUT US&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
-        <li><a href="contactus.jsp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CONTACT US&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+       <li><a href="buyacar.jsp">BUY A CAR &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+       <li><a href="sellacar.jsp"> SELL CAR &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+        <li><a href="aboutus.jsp">ABOUT US&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+        <li><a href="contactus.jsp">CONTACT US&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+     <li><a href="logout.jsp">LOG OUT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href=""><span class="glyphicon glyphicon-log-in"></span>&nbsp;&nbsp;Welcome Subhanjan</a></li>
+        <li><a><span class="glyphicon glyphicon-log-in"></span>WELCOME SUBHANJAN</a></li>
       </ul>     
     </div>
   </div>
@@ -136,7 +137,7 @@ body {
 			</li>
   		<li><a href="#4a" data-toggle="tab">User's Feedback</a>
 			</li>
-                        <li class="nav navbar-nav navbar-right"><a href="index.html"> <span class="glyphicon glyphicon-log-out"></span>&nbsp;Log Out</a>
+                        <li class="nav navbar-nav navbar-right"><a href="home.jsp"> <span class="glyphicon glyphicon-log-out"></span>&nbsp;Log Out</a>
 			</li>
 		</ul>
 
@@ -153,18 +154,19 @@ ResultSet rs = null;
 Class.forName("org.apache.derby.jdbc.ClientDriver").newInstance();
 connection = DriverManager.getConnection(connectionURL, "autowings", "autowings");
 statement = connection.createStatement();
-String QueryString = "SELECT * from patients";
+String QueryString = "SELECT * from signup";
 rs = statement.executeQuery(QueryString);
 %><br>
 <TABLE class="table table-striped" border="1" style="background-color: #ffffcc;">
 <thead>
       <tr>
-        <th>ID</th>
-        <th>USERNAME</th>
-        <th>PASSWORD</th>
+        
+        <th>NAME</th>
         <th>EMAIL</th>
-        <th>MOBILE NO</th>
-        <th>ADDRESS</th>
+         <th>PASSWORD</th>
+        <th>DATE OF BIRTH</th>
+         <th>MOBILE NO</th>
+        
       </tr>
     </thead>
     <tbody>
@@ -172,12 +174,11 @@ rs = statement.executeQuery(QueryString);
 while (rs.next()) {
 %>
 <TR>
-<TD><%=rs.getInt(1)%></TD>
+<TD><%=rs.getString(1)%></TD>
 <TD><%=rs.getString(2)%></TD>
 <TD><%=rs.getString(3)%></TD>
 <TD><%=rs.getString(4)%></TD>
 <TD><%=rs.getString(5)%></TD>
-<TD><%=rs.getString(6)%></TD>
 </TR></tbody>
 <% } %>
 <%
@@ -249,7 +250,66 @@ out.println("Unable to connect to database.");
 </TABLE> 
 				</div>
         <div class="tab-pane" id="3b">
-          <h3>Car Details Coming Soon</h3>
+ <%
+try {
+
+String connectionURL = "jdbc:derby://localhost:1527/autowings";
+Connection connection = null;
+Statement statement = null;
+ResultSet rs = null;
+Class.forName("org.apache.derby.jdbc.ClientDriver").newInstance();
+connection = DriverManager.getConnection(connectionURL, "autowings", "autowings");
+statement = connection.createStatement();
+String QueryString = "SELECT * from bookacar";
+rs = statement.executeQuery(QueryString);
+       %><br>
+<TABLE class="table table-striped" cellpadding="15" border="1" style="background-color: #ffffcc;">
+<thead>
+      <tr>
+          <th>ID</th>
+        <th>Email</th>
+        <th>Name</th>
+        <th>Mobile No</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Car Company</th>
+        <th>Car Model</th>
+      </tr>
+    </thead>
+    <tbody>
+    <%
+while (rs.next()) {
+%>
+<TR>
+<TD><%=rs.getString(1)%></TD>
+<TD><%=rs.getString(2)%></TD>
+<TD><%=rs.getString(3)%></TD>
+<TD><%=rs.getString(4)%></TD>
+<TD><%=rs.getString(5)%></TD>
+<TD><%=rs.getString(6)%></TD>
+<TD><%=rs.getString(7)%></TD>
+<TD><%=rs.getString(8)%></TD>
+<TD><%=rs.getString(9)%></TD>
+</TR></tbody>
+<% } %>
+<%
+// close all the connections.
+rs.close();
+statement.close();
+connection.close();
+} catch (Exception ex) {
+%>
+
+<font size="+3" color="red"></b>
+<%
+out.println("Unable to connect to database.");
+}
+%>
+</TABLE> 
+            
+            
+            
 				</div>
           <div class="tab-pane" id="4a">
           <%

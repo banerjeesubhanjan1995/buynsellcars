@@ -99,7 +99,7 @@ public final class adminprofile_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("\n");
       out.write("body {\n");
       out.write("  padding : 10px ;\n");
-      out.write("  background-image: url(pics/tiles.jpg);\n");
+      out.write("  background-image: url(pics/tiles1.jpeg);\n");
       out.write("}\n");
       out.write("\n");
       out.write("#exTab1 .tab-content {\n");
@@ -149,13 +149,14 @@ public final class adminprofile_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("    </div>\n");
       out.write("    <div class=\"collapse navbar-collapse\" id=\"myNavbar\">\n");
       out.write("      <ul class=\"nav navbar-nav\">\n");
-      out.write("          <li><a href=\"index.html\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HOME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>\n");
+      out.write("          <li><a href=\"index.jsp\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HOME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>\n");
       out.write("        \n");
       out.write("      \n");
-      out.write("       <li><a href=\"buyacar.jsp\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BUY A CAR &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>\n");
-      out.write("       <li><a href=\"sellacar.jsp\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SELL CAR &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>\n");
-      out.write("        <li><a href=\"aboutus.jsp\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ABOUT US&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>\n");
-      out.write("        <li><a href=\"contactus.jsp\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CONTACT US&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>\n");
+      out.write("       <li><a href=\"buyacar.jsp\">BUY A CAR &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>\n");
+      out.write("       <li><a href=\"sellacar.jsp\"> SELL CAR &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>\n");
+      out.write("        <li><a href=\"aboutus.jsp\">ABOUT US&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>\n");
+      out.write("        <li><a href=\"contactus.jsp\">CONTACT US&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>\n");
+      out.write("     <li><a href=\"logout.jsp\">LOG OUT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>\n");
       out.write("      </ul>\n");
       out.write("      <ul class=\"nav navbar-nav navbar-right\">\n");
       out.write("        <li><a href=\"\"><span class=\"glyphicon glyphicon-log-in\"></span>&nbsp;&nbsp;Welcome Subhanjan</a></li>\n");
@@ -177,7 +178,7 @@ public final class adminprofile_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("\t\t\t</li>\n");
       out.write("  \t\t<li><a href=\"#4a\" data-toggle=\"tab\">User's Feedback</a>\n");
       out.write("\t\t\t</li>\n");
-      out.write("                        <li class=\"nav navbar-nav navbar-right\"><a href=\"index.html\"> <span class=\"glyphicon glyphicon-log-out\"></span>&nbsp;Log Out</a>\n");
+      out.write("                        <li class=\"nav navbar-nav navbar-right\"><a href=\"home.jsp\"> <span class=\"glyphicon glyphicon-log-out\"></span>&nbsp;Log Out</a>\n");
       out.write("\t\t\t</li>\n");
       out.write("\t\t</ul>\n");
       out.write("\n");
@@ -195,19 +196,20 @@ ResultSet rs = null;
 Class.forName("org.apache.derby.jdbc.ClientDriver").newInstance();
 connection = DriverManager.getConnection(connectionURL, "autowings", "autowings");
 statement = connection.createStatement();
-String QueryString = "SELECT * from patients";
+String QueryString = "SELECT * from signup";
 rs = statement.executeQuery(QueryString);
 
       out.write("<br>\n");
       out.write("<TABLE class=\"table table-striped\" border=\"1\" style=\"background-color: #ffffcc;\">\n");
       out.write("<thead>\n");
       out.write("      <tr>\n");
-      out.write("        <th>ID</th>\n");
-      out.write("        <th>USERNAME</th>\n");
-      out.write("        <th>PASSWORD</th>\n");
+      out.write("        \n");
+      out.write("        <th>NAME</th>\n");
       out.write("        <th>EMAIL</th>\n");
-      out.write("        <th>MOBILE NO</th>\n");
-      out.write("        <th>ADDRESS</th>\n");
+      out.write("         <th>PASSWORD</th>\n");
+      out.write("        <th>DATE OF BIRTH</th>\n");
+      out.write("         <th>MOBILE NO</th>\n");
+      out.write("        \n");
       out.write("      </tr>\n");
       out.write("    </thead>\n");
       out.write("    <tbody>\n");
@@ -218,7 +220,7 @@ while (rs.next()) {
       out.write("\n");
       out.write("<TR>\n");
       out.write("<TD>");
-      out.print(rs.getInt(1));
+      out.print(rs.getString(1));
       out.write("</TD>\n");
       out.write("<TD>");
       out.print(rs.getString(2));
@@ -231,9 +233,6 @@ while (rs.next()) {
       out.write("</TD>\n");
       out.write("<TD>");
       out.print(rs.getString(5));
-      out.write("</TD>\n");
-      out.write("<TD>");
-      out.print(rs.getString(6));
       out.write("</TD>\n");
       out.write("</TR></tbody>\n");
  } 
@@ -328,7 +327,91 @@ out.println("Unable to connect to database.");
       out.write("</TABLE> \n");
       out.write("\t\t\t\t</div>\n");
       out.write("        <div class=\"tab-pane\" id=\"3b\">\n");
-      out.write("          <h3>Car Details Coming Soon</h3>\n");
+      out.write(" ");
+
+try {
+
+String connectionURL = "jdbc:derby://localhost:1527/autowings";
+Connection connection = null;
+Statement statement = null;
+ResultSet rs = null;
+Class.forName("org.apache.derby.jdbc.ClientDriver").newInstance();
+connection = DriverManager.getConnection(connectionURL, "autowings", "autowings");
+statement = connection.createStatement();
+String QueryString = "SELECT * from bookacar";
+rs = statement.executeQuery(QueryString);
+       
+      out.write("<br>\n");
+      out.write("<TABLE class=\"table table-striped\" cellpadding=\"15\" border=\"1\" style=\"background-color: #ffffcc;\">\n");
+      out.write("<thead>\n");
+      out.write("      <tr>\n");
+      out.write("          <th>ID</th>\n");
+      out.write("        <th>Email</th>\n");
+      out.write("        <th>Name</th>\n");
+      out.write("        <th>Mobile No</th>\n");
+      out.write("        <th>Address</th>\n");
+      out.write("        <th>City</th>\n");
+      out.write("        <th>State</th>\n");
+      out.write("        <th>Car Company</th>\n");
+      out.write("        <th>Car Model</th>\n");
+      out.write("      </tr>\n");
+      out.write("    </thead>\n");
+      out.write("    <tbody>\n");
+      out.write("    ");
+
+while (rs.next()) {
+
+      out.write("\n");
+      out.write("<TR>\n");
+      out.write("<TD>");
+      out.print(rs.getString(1));
+      out.write("</TD>\n");
+      out.write("<TD>");
+      out.print(rs.getString(2));
+      out.write("</TD>\n");
+      out.write("<TD>");
+      out.print(rs.getString(3));
+      out.write("</TD>\n");
+      out.write("<TD>");
+      out.print(rs.getString(4));
+      out.write("</TD>\n");
+      out.write("<TD>");
+      out.print(rs.getString(5));
+      out.write("</TD>\n");
+      out.write("<TD>");
+      out.print(rs.getString(6));
+      out.write("</TD>\n");
+      out.write("<TD>");
+      out.print(rs.getString(7));
+      out.write("</TD>\n");
+      out.write("<TD>");
+      out.print(rs.getString(8));
+      out.write("</TD>\n");
+      out.write("<TD>");
+      out.print(rs.getString(9));
+      out.write("</TD>\n");
+      out.write("</TR></tbody>\n");
+ } 
+      out.write('\n');
+
+// close all the connections.
+rs.close();
+statement.close();
+connection.close();
+} catch (Exception ex) {
+
+      out.write("\n");
+      out.write("\n");
+      out.write("<font size=\"+3\" color=\"red\"></b>\n");
+
+out.println("Unable to connect to database.");
+}
+
+      out.write("\n");
+      out.write("</TABLE> \n");
+      out.write("            \n");
+      out.write("            \n");
+      out.write("            \n");
       out.write("\t\t\t\t</div>\n");
       out.write("          <div class=\"tab-pane\" id=\"4a\">\n");
       out.write("          ");

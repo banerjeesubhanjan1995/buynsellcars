@@ -29,8 +29,8 @@ background-size: 1350px;
          <h1 align="center">Feedback Successfully</h1>
          <h2 align="center">Thank You <jsp:getProperty name="myBean1" property="name"/>, For your Feedback... </h2>
              
-    <p align="center"><a href="buyacar.jsp">Click here</a> to go to your Book A Car.</p>
-    <p align="center"><a href="index.html">Click here</a> to go to HOME.</p>
+    <p align="center"><a href="buyacar.jsp">Click here</a> to go to your Buy A Car.</p>
+    <p align="center"><a href="index.jsp">Click here</a> to go to HOME.</p>
         
     <%--       <table border="1">
               <thead>
