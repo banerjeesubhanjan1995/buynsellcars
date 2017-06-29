@@ -115,10 +115,10 @@ body {
        <li><a href="sellacar.jsp"> SELL CAR &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
         <li><a href="aboutus.jsp">ABOUT US&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
         <li><a href="contactus.jsp">CONTACT US&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
-     <li><a href="logout.jsp">LOG OUT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+     
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a><span class="glyphicon glyphicon-log-in"></span>WELCOME SUBHANJAN</a></li>
+        <li><a><span class="glyphicon glyphicon-log-in"></span>&nbsp;&nbsp;WELCOME SUBHANJAN</a></li>
       </ul>     
     </div>
   </div>

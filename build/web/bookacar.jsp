@@ -13,6 +13,7 @@
          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
          <script type="text/javascript">
 var state_arr = new Array("MARUTI SUZUKI", "RENAULT", "HYUNDAI", "TATA");
 
@@ -45,6 +46,48 @@ function print_city(city, selectedIndex){
 }
 </script>
         <style>
+                 .fa {
+    padding: 5px;
+    font-size: 25px;
+    width: 35px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+}
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+ footer{
+    text-align: center;
+   color: white;
+  
+   background-color: #333333;
+   font-family: arial;
+}
 .stepwizard-step p {
     margin-top: 10px;
 }
@@ -146,15 +189,7 @@ function print_city(city, selectedIndex){
        
        <div class="container">
 <div class="stepwizard">
-    <div class="stepwizard-row setup-panel">
-        <div class="stepwizard-step">
-            <a href="#ProfileSetup-step" type="button" class="btn btn-primary btn-circle"  id="ProfileSetup-step-2">
-                <span class="glyphicon glyphicon-user"></span>
-            </a>
-            <p>Book A Car</p>
-        </div>
-        
-    </div>
+ 
 </div>
 <form action="hello3.jsp" method="post" role="form">
     <div class="row setup-content" id="ProfileSetup-step">
@@ -166,7 +201,7 @@ function print_city(city, selectedIndex){
                      
                       
                           <legend>Enter Your Information</legend>
-                          <br/>
+                          </br>
                           <div class="form-group">
                             <label class="col-sm-3 control-label" for="card-holder-name">Your Email</label>
                             <div class="col-sm-9">
@@ -229,6 +264,43 @@ function print_city(city, selectedIndex){
        </form>
 
     
-    </div>
+       </div><br>
+       <footer>
+        <div class="container">
+<div class="col-sm-4">
+    <h4>Follow Us :</h4>
+ <a href="https://www.facebook.com" class= "social_icon"> <i class="fa fa-facebook"></i></a>
+ <a href="https://www.twitter.com" class= "social_icon"> <i class="fa fa-twitter"></i></a>
+ <a href="https://www.youtube.com" class= "social_icon"> <i class="fa fa-youtube"></i></a>
+ <a href="https://www.gmail.com" class= "social_icon"> <i class="fa fa-instagram"></i></a>
+ <a href="https://www.gmail.com" class= "social_icon"> <i class="fa fa-linkedin"></i></a>
+</div>
+            <div class="col-sm-4"><br>
+<b>&copy;&nbsp;NIITian<br>
+          &reg;&nbsp;AutoWings Pvt.Ltd<br>
+          &reg;&nbsp;SUBHANJAN BANERJEE</b>
+</div>
+<div class="col-sm-4">
+    <table>
+  <tr>
+    <th colspan="5"><h4>Quick Links</h4></th>
+  </tr>
+  <tr>
+    <td><a href="index.html" style="text-decoration: none; color: white" >&raquo; Home </a></td>
+    <td></td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="buyacar.jsp" style="text-decoration: none; color: white">&raquo; Buy A Car</a></td>
+    <td></td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="contactus.jsp" style="text-decoration: none; color: white">&raquo; Contact Us</a></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="sellacar.jsp" style="text-decoration: none; color: white">&raquo; Sale A Car</a><br></td>
+    <td></td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="aboutus.jsp" style="text-decoration: none; color: white">&raquo; About Us</a></br></td>
+  </tr>
+</table>
+</div>
+        </div><br>
+      </footer>    
+       
     </body>
 </html>

@@ -169,8 +169,8 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("       <a class=\"navbar-brand\" href=\"#\"><p style=\"font-family: forte;font-size:25px\">AutoWings</p></a>\n");
       out.write("    \n");
       out.write("    <div class=\"w3-right w3-hide-small\" style=\"display: inline\">\n");
-      out.write("     <button class=\"button button2\" onclick=\"window.open('adminlogin.jsp')\"><span class=\"glyphicon glyphicon-user\"></span>&nbsp;&nbsp;Admin Login</button>&nbsp;&nbsp;&nbsp;&nbsp;\n");
-      out.write("      <button class=\"button button2\" onclick=\"window.open('signup.jsp')\"><span class=\"glyphicon glyphicon-user\"></span>&nbsp;&nbsp;Sign Up</button>&nbsp;&nbsp;&nbsp;&nbsp;\n");
+      out.write("     <button class=\"button button2\" onclick=\"location.reload();location.href='adminlogin.jsp'\"><span class=\"glyphicon glyphicon-user\"></span>&nbsp;&nbsp;Admin Login</button>&nbsp;&nbsp;&nbsp;&nbsp;\n");
+      out.write("      <button class=\"button button2\" onclick=\"location.reload();location.href='signup.jsp'\"><span class=\"glyphicon glyphicon-user\"></span>&nbsp;&nbsp;Sign Up</button>&nbsp;&nbsp;&nbsp;&nbsp;\n");
       out.write("      <button data-toggle=\"modal\" data-target=\"#myModal\" class=\"button button2\"><span class=\"glyphicon glyphicon-log-in\"></span>&nbsp;&nbsp;Login</button>\n");
       out.write("    <div class=\"modal fade\" id=\"myModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">\n");
       out.write("\t<div class=\"modal-dialog\">\n");

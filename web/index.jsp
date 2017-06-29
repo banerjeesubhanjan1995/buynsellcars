@@ -28,7 +28,7 @@ and open the template in the editor.
     <body class="cover"> 
          <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
          <div class="navbar">
-         <nav class="navbar navbar-default">
+         <nav class="navbar navbar-default ">
   <div class="container-fluid">
     <div class="navbar-header">
        <img src="pics/wings3.png" width="135" height="58" alt="Header Image" style="float: left;display: inline"/>
