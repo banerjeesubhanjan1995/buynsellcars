@@ -26,13 +26,14 @@ background-size: 1400px;
          <jsp:setProperty name="myBean1" property="phoneno"/>
          <jsp:setProperty name="myBean1" property="state"/>
          <jsp:setProperty name="myBean1" property="city"/>
+         <jsp:setProperty name="myBean1" property="carcompany"/>
          <jsp:setProperty name="myBean1" property="carmodel"/>
         <br><br><br><br>
          <h1 align="center">Successfully Register for Test Drive</h1> 
          <h2 align="center">Congratulation <jsp:getProperty name="myBean1" property="fname"/> , Booking of
          <jsp:getProperty name="myBean1" property="carmodel"/> for Test Drive </h2>
     <p align="center"><a href="buyacar.jsp">Click here</a> to go to your Book A Car.</p>
-    <p align="center"><a href="index.html">Click here</a> to go to HOME.</p>
+    <p align="center"><a href="index.jsp">Click here</a> to go to HOME.</p>
         
          <%--   <table border="1">
               <thead>

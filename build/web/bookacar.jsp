@@ -15,7 +15,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
          <script type="text/javascript">
-var state_arr = new Array("MARUTI SUZUKI", "RENAULT", "HYUNDAI", "TATA");
+var state_arr = new Array("MARUTI SUZUKI", "RENAULT", "HYUNDAI", "TATA","OTHERS");
 
 var s_a = new Array();
 s_a[0]="";
@@ -43,6 +43,36 @@ function print_city(city, selectedIndex){
     for (var i=0; i<city_arr.length; i++) {
     option_str.options[option_str.length] = new Option(city_arr[i],city_arr[i]);
     }
+}
+// validate email
+function email_validate(email)
+{
+var regMail = /^([_a-zA-Z0-9-]+)(\.[_a-zA-Z0-9-]+)*@([a-zA-Z0-9-]+\.)+([a-zA-Z]{2,3})$/;
+
+    if(regMail.test(email) === false)
+    {
+    document.getElementById("status").innerHTML    = "<span class='warning'>Email address is not valid yet.</span>";
+    }
+    else
+    {
+    document.getElementById("status").innerHTML	= "<span class='valid'>Thanks, you have entered a valid Email address!</span>";	
+    }
+}
+function Validate(txt) {
+    txt.value = txt.value.replace(/[^a-z A-Z-'\n\r.]+/g, '');
+}
+function validatephone(phone) 
+{
+    var maintainplus = '';
+    var numval = phone.value
+    if ( numval.charAt(0)=='+' )
+    {
+        var maintainplus = '';
+    }
+    curphonevar = numval.replace(/[\\A-Za-z!"£$%^&\,*+_={};:'@#~,.Š\/<>?|`¬\]\[]/g,'');
+    phone.value = maintainplus + curphonevar;
+    var maintainplus = '';
+    phone.focus;
 }
 </script>
         <style>
@@ -146,7 +176,26 @@ function print_city(city, selectedIndex){
    box-shadow:inset 0px 0px 0px 3px #fff !important;
       background-color:#428bca;
 }
-
+fieldset {
+    border: thin solid #ccc; 
+    border-radius: 4px;
+    padding: 20px;
+    padding-left: 40px;
+    background: #fbfbfb;
+}
+legend {
+   color: #678;
+}
+.form-control {
+    width: 95%;
+}
+label small {
+    color: #678 !important;
+}
+span.req {
+    color:maroon;
+    font-size: 112%;
+}
         </style>
     </head>
     <body>
@@ -173,6 +222,7 @@ function print_city(city, selectedIndex){
           <li><a href="renault.jsp">RENAULT</a></li>
           <li><a href="hyundai.jsp">HYUNDAI</a></li>
           <li><a href="tata.jsp">TATA</a></li>
+          <li><a href="ViewPatientData">USED CARS</a></li>
         </ul>
       </li>
        <li><a href="sellacar.jsp"> SELL CAR &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
@@ -191,7 +241,7 @@ function print_city(city, selectedIndex){
 <div class="stepwizard">
  
 </div>
-<form action="hello3.jsp" method="post" role="form">
+           <form action="hello3.jsp" method="post" role="form" autocomplete="off">
     <div class="row setup-content" id="ProfileSetup-step">
         <div class="col-xs-12">
             <div class="col-md-12">
@@ -203,62 +253,65 @@ function print_city(city, selectedIndex){
                           <legend>Enter Your Information</legend>
                           </br>
                           <div class="form-group">
-                            <label class="col-sm-3 control-label" for="card-holder-name">Your Email</label>
+                            <label class="col-sm-3 control-label" for="email"><span class="req">* </span>Your Email</label>
                             <div class="col-sm-9">
-                                <input name="email"  maxlength="100" type="text" class="form-control" placeholder="Enter Email"  />
+                                <input class="form-control" required type="text" name="email" id = "email"  onchange="email_validate(this.value);" placeholder="Enter Email" />   
+                        <div class="status" id="status"></div>
                             </div>
                           </div>
                           <div class="form-group">
-                            <label class="col-sm-3 control-label" for="card-number">Name</label>
+                            <label class="col-sm-3 control-label" for="name"><span class="req">* </span>Name</label>
                             <div class="col-sm-9">
-                             <input name="name" maxlength="100" type="text" class="form-control" placeholder="Enter Name" />
+                                <input name="name" maxlength="100" type="text" class="form-control" id = "txt" onkeyup = "Validate(this)" required="required" placeholder="Enter Name" />
+                            <div class="status" id="status"></div>
                             </div>
                           </div>
                           <div class="form-group">
-                            <label class="col-sm-3 control-label" for="card-number">Phone Number</label>
+                            <label class="col-sm-3 control-label" for="card-number"><span class="req">* </span>Phone Number</label>
                             <div class="col-sm-9">
-                                <input name="phoneno" maxlength="100" type="text" class="form-control" placeholder="Enter Primary Phone Number" />
+                                <input required type="text" name="phoneno" pattern="[0-9]{10}" id="phone" class="form-control phone" maxlength="28" onkeyup="validatephone(this);" placeholder="Enter Primary Phone Number" />
                             </div>
                           </div>
                           <div class="form-group">
-                            <label class="col-sm-3 control-label" for="card-number">Address</label>
+                            <label class="col-sm-3 control-label" for="card-number"><span class="req">* </span>Address</label>
                             <div class="col-sm-9">
-                                <input name="address" maxlength="100" type="text" class="form-control" placeholder="Enter Address" />
+                                <input required="required" name="address" maxlength="100" type="text" class="form-control" placeholder="Enter Address" />
                             </div>
                           </div>
                           <div class="col-lg-6">
                                <div class="form-group">
-                                    <label class="col-sm-6 control-label" for="card-number">City</label>
+                                    <label class="col-sm-6 control-label" for="card-number"><span class="req">* </span>City</label>
                                     <div class="col-sm-6" style="padding-left:8px">
-                                        <input name="city" maxlength="100" type="text" class="form-control" placeholder="Enter City" />
+                                        <input id = "txt" onkeyup = "Validate(this)" required="required" name="city" maxlength="100" type="text" class="form-control" placeholder="Enter City" />
                                     </div>
                                   </div>
                           </div>
-                           <div class="col-lg-6">
+                           <div class="col-lg-5">
                                <div class="form-group">
-                                    <label class="col-sm-6 control-label" for="card-number">State/Province</label>
+                                    <label class="col-sm-6 control-label" for="card-number"><span class="req">* </span>State/Province</label>
                                     <div class="col-sm-6" style="padding:0px">
-                                        <input name="state" maxlength="100" type="text" class="form-control" placeholder="Enter State/Province" />
+                                        <input id = "txt" onkeyup = "Validate(this)" required="required" name="state" maxlength="100" type="text" class="form-control" placeholder="Enter State/Province" />
                                     </div>
                                   </div>
                           </div>
                           <div class="form-group">
-                            <label class="col-sm-3 control-label" for="card-number">Select Car Company</label>
+                            <label class="col-sm-3 control-label" for="card-number"><span class="req">* </span>Select Car Company</label>
                             <div class="col-sm-9">
                                         <select name="carcompany" class="form-control" onchange="print_city('city',this.selectedIndex);" id="state" name ="state"></select>
                             </div>
                             </div>
                          
                           <div class="form-group">
-                            <label class="col-sm-3 control-label" for="card-number">Select Car Model</label>
+                            <label class="col-sm-3 control-label" for="card-number"><span class="req">* </span> Select Car Model</label>
                             <div class="col-sm-9">
                              <select name="carmodel"class="form-control" name ="city" id ="city"></select>
                                      <script language="javascript">print_state("state");</script>
                             </div>
            </div>
-            
-                    <input type="submit" class="btn btn-primary nextBtn btn-lg pull-right" value="BOOK NOW"/>
-             
+            <div class="form-group">
+                <div class="col-sm-11">
+                    <input type="submit" class="btn btn-success nextBtn btn-lg pull-right" value="BOOK NOW"/>
+                </div></div>
                           
                 </div></div></div></div>
        </form>

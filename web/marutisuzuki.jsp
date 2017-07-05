@@ -43,6 +43,7 @@
           <li><a href="renault.jsp">RENAULT</a></li>
           <li><a href="hyundai.jsp">HYUNDAI</a></li>
           <li><a href="tata.jsp">TATA</a></li>
+          <li><a href="ViewPatientData">USED CARS</a></li>
         </ul>
       </li>
        <li><a href="sellacar.jsp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SELL CAR &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
@@ -1383,7 +1384,7 @@ btn.onclick = function() {
           <img class="nexa" src="pics/nexa-.png" height="40%" width="40%" >     
     <h3>| A NEW DESTINATION . A NEW EXPERIENCE</h3>       
     
-        <video controls  loop controls>
+        <video controls  loop controls autoplay>
             <source src="video/nexa.mp4" type="video/mp4"></video>  
  
     

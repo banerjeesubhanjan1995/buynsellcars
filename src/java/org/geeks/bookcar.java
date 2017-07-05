@@ -148,11 +148,11 @@ public int store() throws ClassNotFoundException, SQLException{
    as.setString(6, getState());
   as.setString(7, getCarcompany());
    as.setString(8, getCarmodel());
-   int b=as.executeUpdate();
+   int a=as.executeUpdate();
    
-   if(b==1){
-       return b;
+   if(a==1){
+       return a;
    }else{
-       return b;
+       return a;
    }}
 }

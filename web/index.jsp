@@ -42,9 +42,7 @@ and open the template in the editor.
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
           <li class="active"><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HOME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
-        
-      
-       <li><a href="buyacar.jsp"> BUY A CAR &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+          <li><a href="buyacar.jsp"> BUY A CAR &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
        <li><a href="sellacar.jsp"> SELL CAR &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
         <li><a href="aboutus.jsp">ABOUT US&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
         <li><a href="contactus.jsp">CONTACT US&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
@@ -285,7 +283,7 @@ and open the template in the editor.
         <div class="container">
   <div class="row">
     <div class="col-sm-8">
-        <br><br><br><video controls loop>
+        <br><br><br><video controls loop autoplay>
             <source src="video/ve.mp4" type="video/mp4"></video>  
     </div>
 

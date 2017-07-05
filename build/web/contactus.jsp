@@ -70,8 +70,26 @@ if($('#feedback').val() === "") {
 });
 		
 });
+// validate email
+function email_validate(email)
+{
+var regMail = /^([_a-zA-Z0-9-]+)(\.[_a-zA-Z0-9-]+)*@([a-zA-Z0-9-]+\.)+([a-zA-Z]{2,3})$/;
+
+    if(regMail.test(email) === false)
+    {
+    document.getElementById("status").innerHTML    = "<span class='warning'>Email address is not valid yet.</span>";
+    }
+    else
+    {
+    document.getElementById("status").innerHTML	= "<span class='valid'>Thanks, you have entered a valid Email address!</span>";	
+    }
+}
+function Validate(name) {
+    name.value = name.value.replace(/[^a-z A-Z-'\n\r.]+/g, '');
+}
 </script>   
 <style>
+    
     #myBtn {
     display: none; /* Hidden by default */
     position: fixed; /* Fixed/sticky position */
@@ -407,6 +425,7 @@ label{
           <li><a href="renault.jsp">RENAULT</a></li>
           <li><a href="hyundai.jsp">HYUNDAI</a></li>
           <li><a href="tata.jsp">TATA</a></li>
+          <li><a href="ViewPatientData">USED CARS</a></li>
         </ul>
       </li>
        <li><a href="sellacar.jsp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SELL CAR &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
@@ -461,15 +480,16 @@ label{
     <img style="float: right;" src="pics/feed.png" height="99%" width="99%">   
             </div>
 <div class="col-sm-8">
-    <form style="float: left;" action="hello2.jsp" id="waterform" method="post">
+    <form style="float: left;" action="hello2.jsp" id="waterform" method="post" autocomplete="off">
 
 <div class="formgroup" id="name-form">
     <label for="name">Your name*</label>
-    <input type="text" id="name" name="name" />
+    <input type="text" id="name" onkeyup = "Validate(this)" name="name" />
 </div>
 <div class="formgroup" id="email-form">
     <label for="email">Your e-mail*</label>
-    <input type="email" id="email" name="email" />
+    <input type="email" id="email" onchange="email_validate(this.value);" name="email" />
+ <div class="status" id="status"></div>
 </div>
 
 <div class="formgroup" id="feedback-form">

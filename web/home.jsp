@@ -17,6 +17,11 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+      function Validate(uLogin) {
+    uLogin.value = uLogin.value.replace(/[^a-z A-Z-'\n\r.]+/g, '');
+}
+  </script>
 <style>
 body,h1,h2,h3,h4,h5,h6 {
     font-family: "Raleway";
@@ -142,10 +147,10 @@ body, html {
 			</div> <!-- /.modal-header -->
 
 			<div class="modal-body">
-                            <form method="post" action="login.jsp">
+                            <form method="post" action="login.jsp" autocomplete="off">
 					<div class="form-group">
 						<div class="input-group">
-                                                    <input type="text" name="name" required="required" class="form-control" id="uLogin" placeholder="Name">
+                                                    <input type="text" name="name" required="required" class="form-control" id="uLogin" onkeyup = "Validate(this)" placeholder="Name">
 							<label for="uLogin" class="input-group-addon glyphicon glyphicon-user"></label>
 						</div>
 					</div> <!-- /.form-group -->

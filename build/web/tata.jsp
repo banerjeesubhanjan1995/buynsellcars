@@ -59,6 +59,7 @@ function topFunction() {
           <li><a href="renault.jsp">RENAULT</a></li>
           <li><a href="hyundai.jsp">HYUNDAI</a></li>
           <li><a href="tata.jsp">TATA</a></li>
+          <li><a href="ViewPatientData">USED CARS</a></li>
         </ul>
       </li>
        <li><a href="sellacar.jsp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SELL CAR &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>

@@ -20,6 +20,7 @@ public class first {
     private String phoneno;
     private String state;
     private String city;
+    private String carcompany;
     private String carmodel;
 
     /**
@@ -91,7 +92,19 @@ public class first {
     public void setCity(String city) {
         this.city = city;
     }
+ /**
+     * @return the carcompany
+     */
+    public String getCarcompany() {
+        return carcompany;
+    }
 
+    /**
+     * @param carcompany the carcompany to set
+     */
+    public void setCarcompany(String carcompany) {
+        this.carcompany = carcompany;
+    }
     /**
      * @return the carmodel
      */
@@ -109,13 +122,14 @@ public int store() throws ClassNotFoundException, SQLException{
        Class.forName("org.apache.derby.jdbc.ClientDriver");
        String url="jdbc:derby://localhost:1527/autowings;create=true;user=autowings;password=autowings";
    Connection con= DriverManager.getConnection(url);
-   PreparedStatement as= con.prepareStatement("insert into testdrive(fname,email,phoneno,state,city,carmodel) values(?,?,?,?,?,?)");
+   PreparedStatement as= con.prepareStatement("insert into testdrive(fname,email,phoneno,state,city,carcompany,carmodel) values(?,?,?,?,?,?,?)");
    as.setString(1, getFname());
    as.setString(2, getEmail()); 
   as.setString(3, getPhoneno());
   as.setString(4, getState());
   as.setString(5, getCity());
-  as.setString(6, getCarmodel());
+    as.setString(6, getCarcompany());
+  as.setString(7, getCarmodel());
    int b=as.executeUpdate();
    
    if(b==1){
@@ -123,4 +137,6 @@ public int store() throws ClassNotFoundException, SQLException{
    }else{
        return b;
    }}
+
+   
 }

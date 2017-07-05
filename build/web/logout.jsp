@@ -13,7 +13,7 @@
         <style>
                         body{
 
-background-attachment:scroll;
+
 background:url(pics/logout1.jpg);
 background-size: 1365px;
 }

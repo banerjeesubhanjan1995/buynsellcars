@@ -74,6 +74,36 @@ function topFunction() {
 
     $('div.setup-panel div a.btn-primary').trigger('click');
 });
+// validate email
+function email_validate(email)
+{
+var regMail = /^([_a-zA-Z0-9-]+)(\.[_a-zA-Z0-9-]+)*@([a-zA-Z0-9-]+\.)+([a-zA-Z]{2,3})$/;
+
+    if(regMail.test(email) === false)
+    {
+    document.getElementById("status").innerHTML    = "<span class='warning'>Email address is not valid yet.</span>";
+    }
+    else
+    {
+    document.getElementById("status").innerHTML	= "<span class='valid'>Thanks, you have entered a valid Email address!</span>";	
+    }
+}
+function Validate(txt) {
+    txt.value = txt.value.replace(/[^a-z A-Z-'\n\r.]+/g, '');
+}
+function validatephone(phone) 
+{
+    var maintainplus = '';
+    var numval = phone.value
+    if ( numval.charAt(0)=='+' )
+    {
+        var maintainplus = '';
+    }
+    curphonevar = numval.replace(/[\\A-Za-z!"£$%^&\,*+_={};:'@#~,.Š\/<>?|`¬\]\[]/g,'');
+    phone.value = maintainplus + curphonevar;
+    var maintainplus = '';
+    phone.focus;
+}
   </script>
   <style>
     body{background:url(pics/win1.jpg);
@@ -240,10 +270,19 @@ background-attachment:scroll;
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
           <li><a href="index.jsp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HOME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
-        
-      
-       <li><a href="buyacar.jsp"> BUY A CAR &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
-       <li class="active"><a href="sellacar.jsp">SELL CAR &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+       <li><a href="buyacar.jsp"> BUY A CAR</a></li>
+       <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="marutisuzuki.jsp">MARUTI SUZUKI</a></li>
+          <li><a href="renault.jsp">RENAULT</a></li>
+          <li><a href="hyundai.jsp">HYUNDAI</a></li>
+          <li><a href="tata.jsp">TATA</a></li>
+          <li><a href="ViewPatientData">USED CARS</a></li>
+        </ul>
+      </li>
+       <li class="active"><a href="sellacar.jsp">&nbsp;&nbsp;&nbsp;SELL CAR &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
         <li><a href="aboutus.jsp">ABOUT US&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
         <li><a href="contactus.jsp">CONTACT US&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
     <li><a href="logout.jsp">LOG OUT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
@@ -264,9 +303,8 @@ background-attachment:scroll;
   
   <!-- Navbar (placed at the bottom of the header image) -->
   <div class="w3-bar w3-light-grey w3-round w3-display-bottommiddle w3-hide-small" style="bottom:-16px">
-      <a href="#cardetails" class="w3-bar-item w3-button" style="text-decoration: none">Car Details</a>
-    <a href="#sellingprice" class="w3-bar-item w3-button" style="text-decoration: none">Selling Price</a>
-    <a href="#contact" class="w3-bar-item w3-button" style="text-decoration: none">Contact Details</a>
+      <a href="#cardetails" class="w3-bar-item w3-button" style="text-decoration: none">Sell your Car</a>
+    
   </div>
   </header><br>
 <div class=" w3-content w3-margin-top" id="cardetails">
@@ -296,7 +334,7 @@ background-attachment:scroll;
         </div>
     </div>
 </div>
-        <form class="w3-container w3-card-4 w3-light-blue"  action="carposted" method="post" role="form">
+        <form class="w3-container w3-card-4 w3-light-blue"  action="AddPatientToDB" method="post" role="form" autocomplete="off">
     <div class="row setup-content" id="step-1">
         <div class="col-xs-12">
             <div class="col-md-12">
@@ -304,251 +342,62 @@ background-attachment:scroll;
                 <h3> Car Details</h3><br>
                 <div class="col-lg-6">
                 <div class="form-group">
-                     <label class="control-label w3-text-green">Registration Year</label>
-                 <select class="w3-select w3-border w3-round-xxlarge" name="regyear">
-  <option value="" disabled selected>Choose your Year</option>
-   <option value="2017">2017</option>
-                                  
-                                
-                                  <option value="2016">2016</option>
-                                  
-                                
-                                  <option value="2015">2015</option>
-                                  
-                                
-                                  <option value="2014">2014</option>
-                                  
-                                
-                                  <option value="2013">2013</option>
-                                  
-                                
-                                  <option value="2012">2012</option>
-                                  
-                                
-                                  <option value="2011">2011</option>
-                                  
-                                
-                                  <option value="2010">2010</option>
-                                  
-                                
-                                  <option value="2009">2009</option>
-                                  
-                                
-                                  <option value="2008">2008</option>
-                                  
-                                
-                                  <option value="2007">2007</option>
-                                  
-                                
-                                  <option value="2006">2006</option>
-                                  
-                                
-                                  <option value="2005">2005</option>
-                                  
-                                
-                                  <option value="2004">2004</option>
-                                  
-                                
-                                  <option value="2003">2003</option>
-                                  
-                                
-                                  <option value="2002">2002</option>
-                                  
-                                
-                                  <option value="2001">2001</option>
-                                  
-                                
-                                  <option value="2000">2000</option>
-                                  
-                                
-                                  <option value="1999">1999</option>
-                                  
-                                
-                                  <option value="1998">1998</option>
-                                  
-                                
-                                  <option value="1997">1997</option>
-                                  
-                                
-                                  <option value="1996">1996</option>
-                                  
-                                
-                                  <option value="1995">1995</option>
-                                  
-                                
-                                  <option value="1994">1994</option>
-                                  
-                                
-                                  <option value="1993">1993</option>
-                                  
-                                
-                                  <option value="1992">1992</option>
-                                  
-                                
-                                  <option value="1991">1991</option>
-                                  
-                                
-                                  <option value="1990">1990</option>
-                                  
-                                
-                                  <option value="1989">1989</option>
-                                  
-                                
-                                  <option value="1988">1988</option>
-                                  
-                                
-                                  <option value="1987">1987</option>
-                                  
-                                
-                                  <option value="1986">1986</option>
-                                  
-                                
-                                  <option value="1985">1985</option>
-                                  
-                                
-                                  <option value="1984">1984</option>
-                                  
-                                
-                                  <option value="1983">1983</option>
-                                  
-                                
-                                  <option value="1982">1982</option>
-                                  
-                                
-                                  <option value="1981">1981</option>
-                                  
-                                
-                                  <option value="1980">1980</option>
-                                  
-                 </select> </div>
-                </div>
-                <div class="col-lg-6">
-                <div class="form-group">
-                    <label class="control-label w3-text-green">Brand / Model</label>
-                    <input name="model" class="w3-input w3-border w3-round-xxlarge"  maxlength="100" type="text" class="form-control" placeholder="Alto K10"  />
+                    <label class="control-label w3-text-green"><span class="req">* </span>Registration Year</label>
+                    <input required="required" onkeyup="validatephone(this);" id="phone" name="psignup" class="w3-input w3-border w3-round-xxlarge"  maxlength="100" type="text" class="form-control" placeholder="eg.2017"  />
                 </div>
                 </div>
                 <div class="col-lg-6">
                 <div class="form-group">
-                    <label class="control-label w3-text-green">Variant</label>
-                    <input name="variant" class="w3-input w3-border w3-round-xxlarge"  maxlength="100" type="text" class="form-control" placeholder="VXI"  />
+                    <label class="control-label w3-text-green"><span class="req">* </span>Brand / Model</label>
+                    <input required="required" name="psignup" class="w3-input w3-border w3-round-xxlarge"  maxlength="100" type="text" class="form-control" placeholder="eg.Dzire"  />
+                </div>
+                </div>
+                <div class="col-lg-6">
+                <div class="form-group">
+                    <label class="control-label w3-text-green"><span class="req">* </span>Variant</label>
+                    <input required="required" name="psignup" id = "txt" onkeyup = "Validate(this)" class="w3-input w3-border w3-round-xxlarge"  maxlength="100" type="text" class="form-control" placeholder="eg.VXI"  />
                 </div></div>
                 <div class="col-lg-6">
                 <div class="form-group">
-                    <label class="control-label w3-text-green">Kilometers Driven</label>
-                    <input name="kilometers" class="w3-input w3-border w3-round-xxlarge"  maxlength="100" type="text" class="form-control" placeholder="150000"  />
+                    <label class="control-label w3-text-green"><span class="req">* </span>Kilometers Driven</label>
+                    <input required="required" name="psignup" onkeyup="validatephone(this);" id="phone" class="w3-input w3-border w3-round-xxlarge"  maxlength="100" type="text" class="form-control" placeholder="eg.150000 km"  />
                 </div></div>
                 <div class="col-lg-6">
                 <div class="form-group">
-                     <label class="control-label w3-text-green">Color</label>
-                 <select class="w3-select w3-border w3-round-xxlarge" name="color">
+                     <label class="control-label w3-text-green"><span class="req">* </span>Color</label>
+                 <select class="w3-select w3-border w3-round-xxlarge" name="psignup">
   <option value="" disabled selected>Choose your Car Color</option>
-  <option value="1" style="color: red">Fire Brick Red</option>
-  <option value="3" style="color: black">Black</option>
-  <option value="3" style="color: silver">Silky Silver</option>
-  <option value="3" style="color: gray">Granite Grey</option>
-  <option value="3" style="color: blue">Cerulean Blue</option>
-  <option value="3" style="color: orange">Tango Orange</option>
-  <option value="2" style="background:whitesmoke">Superior White</option>
+  <option value="Fire Brick Red" style="color: red">Fire Brick Red</option>
+  <option value="Black" style="color: black">Black</option>
+  <option value="Silky Silver" style="color: silver">Silky Silver</option>
+  <option value="Granite Grey" style="color: gray">Granite Grey</option>
+  <option value="Cerulean Blue" style="color: blue">Cerulean Blue</option>
+  <option value="Tango Orange" style="color: orange">Tango Orange</option>
+  <option value="Superior White" style="background:whitesmoke">Superior White</option>
   
                  </select> </div>
                 </div>
                 <div class="col-lg-6">
                 <div class="form-group">
-                     <label class="control-label w3-text-green">Ownership</label>
-                 <select class="w3-select w3-border w3-round-xxlarge" name="ownership">
+                     <label class="control-label w3-text-green"><span class="req">* </span>Ownership</label>
+                 <select class="w3-select w3-border w3-round-xxlarge" name="psignup">
   <option value="" disabled selected>No Of Ownership</option>
-  <option value="1">First</option>
-  <option value="2">Second</option>
-  <option value="3">Third or above</option>
+  <option value="First">First</option>
+  <option value="Second">Second</option>
+  <option value="Third or above">Third or above</option>
                  </select> </div>
                 </div>
                  <div class="col-lg-6">
                 <div class="form-group">
-                    <label class="control-label w3-text-green">City</label>
-                    <input name="city" class="w3-input w3-border w3-round-xxlarge"  maxlength="100" type="text" class="form-control" placeholder="New Delhi"  />
+                    <label class="control-label w3-text-green"><span class="req">* </span>City</label>
+                    <input required="required" name="psignup" id = "txt" onkeyup = "Validate(this)" class="w3-input w3-border w3-round-xxlarge"  maxlength="100" type="text" class="form-control" placeholder="eg.New Delhi"  />
                 </div></div>
                 <div class="col-lg-6">
                 <div class="form-group">
-                    <label class="control-label w3-text-green">Locality or Pincode</label>
-                    <input name="locality" class="w3-input w3-border w3-round-xxlarge"  maxlength="100" type="text" class="form-control" placeholder="Vasant Vihar or 110010"  />
+                    <label class="control-label w3-text-green"><span class="req">* </span>Locality or Pincode</label>
+                    <input required="required" name="psignup" class="w3-input w3-border w3-round-xxlarge"  maxlength="100" type="text" class="form-control" placeholder="eg.Vasant Vihar or 110010"  />
                 </div></div>
-                <style>
-                    .btn-file {
-    position: relative;
-    overflow: hidden;
-}
-.btn-file input[type=file] {
-    position: absolute;
-    top: 0;
-    right: 0;
-    min-width: 100%;
-    min-height: 100%;
-    font-size: 100px;
-    text-align: right;
-    filter: alpha(opacity=0);
-    opacity: 0;
-    outline: none;
-    background: white;
-    cursor: inherit;
-    display: block;
-}
-
-#img-upload{
-    width: 100%;
-}
-                </style>
-                <script>
-                    $(document).ready( function() {
-    	$(document).on('change', '.btn-file :file', function() {
-		var input = $(this),
-			label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
-		input.trigger('fileselect', [label]);
-		});
-
-		$('.btn-file :file').on('fileselect', function(event, label) {
-		    
-		    var input = $(this).parents('.input-group').find(':text'),
-		        log = label;
-		    
-		    if( input.length ) {
-		        input.val(log);
-		    } else {
-		        if( log ) alert(log);
-		    }
-	    
-		});
-		function readURL(input) {
-		    if (input.files && input.files[0]) {
-		        var reader = new FileReader();
-		        
-		        reader.onload = function (e) {
-		            $('#img-upload').attr('src', e.target.result);
-		        };
-		        
-		        reader.readAsDataURL(input.files[0]);
-		    }
-		}
-
-		$("#imgInp").change(function(){
-		    readURL(this);
-		}); 	
-	});
-                </script>
-                <div class="col-md-6">
-    <div class="form-group">
-        <label class="control-label w3-text-green">Upload Image</label>
-        <div class="input-group">
-            <span class="input-group-btn">
-                <span class="btn btn-default btn-file">
-                    Browse… <input name="image" type="file" id="imgInp">
-                </span>
-            </span>
-            <input name="image" type="text" class="form-control" readonly>
-        </div><br>
-        <img id='img-upload'/>
-    </div>
-                </div>
+                <div class="col-md-6"></div>
                  <div class="col-md-6">
                      <div class="form-group"><br>
                 <button class="btn btn-primary nextBtn btn-lg btn-block w3-btn w3-teal" type="button" >Next</button>
@@ -561,13 +410,13 @@ background-attachment:scroll;
                 <h2>Selling Price</h2>
                 <div class="col-lg-12">
                     <div class="form-group"><br>
-                        <label class="control-label w3-text-green">Expected Selling Price</label>
-                    <input name="sellingprice" class="w3-input w3-border w3-round-xxlarge "  maxlength="100" type="text" class="form-control" placeholder="&#8377;&nbsp;550000"  />
+                        <label class="control-label w3-text-green"><span class="req">* </span>Expected Selling Price</label>
+                        <input pattern="\d+(\.\d{2})?" required="required" onkeyup="validatephone(this);" id="phone" name="psignup" class="w3-input w3-border w3-round-xxlarge "  maxlength="100" type="text" class="form-control" placeholder="eg.&#8377;&nbsp;550000"  />
                     </div></div><br>
      <div class="form-group"><br>
                 <button class="btn btn-primary nextBtn btn-lg btn-block w3-btn w3-teal" type="button" >Next</button><br>
      </div></div>
-        </div>
+        </div>  
     </div>
     <div class="row setup-content" id="step-3">
         <div class="col-xs-12">
@@ -575,19 +424,20 @@ background-attachment:scroll;
                 <h3> Contact Details</h3>
                 <div class="col-lg-12">
                 <div class="form-group">
-                    <label class="control-label w3-text-green">Name</label>
-                    <input name="name" class="w3-input w3-border w3-round-xxlarge"  maxlength="100" type="text" class="form-control" placeholder="Subhanjan"  />
+                    <label class="control-label w3-text-green"><span class="req">* </span>Name</label>
+                    <input pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" id = "txt" onkeyup = "Validate(this)" required="required" name="psignup" class="w3-input w3-border w3-round-xxlarge"  maxlength="100" type="text" class="form-control" placeholder="eg.Jack Sparrow"  />
                 </div>
                 </div>
                 <div class="col-lg-12">
                 <div class="form-group">
-                    <label class="control-label w3-text-green">Email</label>
-                    <input name="email" class="w3-input w3-border w3-round-xxlarge"  maxlength="100" type="text" class="form-control" placeholder="banerjee.subhanjan@gmail.com"  />
+                    <label class="control-label w3-text-green"><span class="req">* </span>Email</label>
+                    <input pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id = "email"  onchange="email_validate(this.value);" required="required" name="psignup" class="w3-input w3-border w3-round-xxlarge"  maxlength="100" type="email" class="form-control" placeholder="eg.sparrow.jack@gmail.com"  />
+               <div class="status" id="status"></div>
                 </div></div>
                 <div class="col-lg-12">
                 <div class="form-group">
-                    <label class="control-label w3-text-green">Mobile (10 digit)</label>
-                    <input name="mobileno" class="w3-input w3-border w3-round-xxlarge"  maxlength="100" type="text" class="form-control" placeholder="9865893569"  />
+                    <label class="control-label w3-text-green"><span class="req">* </span>Mobile (10 digit)</label>
+                    <input maxlength="10"  pattern="[0-9]{10}" onkeyup="validatephone(this);" id="phone" required="required" name="psignup" class="w3-input w3-border w3-round-xxlarge"  maxlength="100" type="text" class="form-control" placeholder="eg.9865893569"  />
                 </div></div><br>
                 <div class="col-lg-2"></div>
                 <div class="form-group">

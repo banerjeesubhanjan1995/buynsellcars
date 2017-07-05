@@ -446,6 +446,7 @@ public final class contactus_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("          <li><a href=\"renault.jsp\">RENAULT</a></li>\n");
       out.write("          <li><a href=\"hyundai.jsp\">HYUNDAI</a></li>\n");
       out.write("          <li><a href=\"tata.jsp\">TATA</a></li>\n");
+      out.write("          <li><a href=\"ViewPatientData\">USED CARS</a></li>\n");
       out.write("        </ul>\n");
       out.write("      </li>\n");
       out.write("       <li><a href=\"sellacar.jsp\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SELL CAR &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>\n");
