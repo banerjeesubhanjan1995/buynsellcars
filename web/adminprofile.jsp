@@ -93,6 +93,12 @@ function validatephone(phone)
 }
   </script>
         <style>
+            .navbar {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  top: 0%;
+}
              /* Style the tab */
 div.tab {
     overflow: hidden;
@@ -300,7 +306,7 @@ input[type='radio'] {
     </head>
     <body>
         <div class="navbar">
-         <nav class="navbar navbar-default navbar-fixed-top">
+         <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
        <img src="pics/wings3.png" width="135" height="58" alt="Header Image" style="float: left;display: inline"/>
@@ -318,7 +324,7 @@ input[type='radio'] {
       </ul>     
     </div>
   </div>
-         </nav></div>
+         </nav></div><br><br><br>
   <div class="container">
 	<div class="row">
             <article class="col-md-4 well">

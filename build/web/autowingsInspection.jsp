@@ -16,6 +16,12 @@
   <link rel="stylesheet" href="css.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <style>
+      .navbar {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  top: 0%;
+}
 table {
     border-collapse: collapse;
     width: 25%;
@@ -35,7 +41,8 @@ th {
 </style>
     </head>
     <body>
-      <header style="position: fixed; top: 0px; width: 100%;">
+        <div class="navbar">
+          
  <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -65,7 +72,7 @@ th {
     </div>
   </div>
  </nav>
-        </header>
+        </div>
         <br><br><br>
         <div class="inspection">
             <h1>The AutoWings Inspection</h1>

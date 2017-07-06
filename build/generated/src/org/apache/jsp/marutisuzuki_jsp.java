@@ -1425,7 +1425,7 @@ public final class marutisuzuki_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("          <img class=\"nexa\" src=\"pics/nexa-.png\" height=\"40%\" width=\"40%\" >     \n");
       out.write("    <h3>| A NEW DESTINATION . A NEW EXPERIENCE</h3>       \n");
       out.write("    \n");
-      out.write("        <video controls  loop controls>\n");
+      out.write("        <video controls  loop controls autoplay>\n");
       out.write("            <source src=\"video/nexa.mp4\" type=\"video/mp4\"></video>  \n");
       out.write(" \n");
       out.write("    \n");

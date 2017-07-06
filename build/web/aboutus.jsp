@@ -39,7 +39,7 @@ h3{
 }
 body{background:url(pics/white.jpg);
 background-attachment:scroll;
-background-size:1365px;
+background-size:1355px;
 }
 #mySidenav a {
     position: fixed; /* Position them relative to the browser window */

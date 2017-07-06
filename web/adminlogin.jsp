@@ -180,7 +180,7 @@ html,body{
             <div class="avatar">
             </div>
             <div class="form-box">
-                <form method="post">
+                <form method="post" autocomplete="off">
                     <input name="user" type="text" placeholder="username">
                     <input name="pswrd" type="password" placeholder="password">
                     <button class="btn btn-info btn-block login" onclick="check(this.form)" type="submit">Login</button>

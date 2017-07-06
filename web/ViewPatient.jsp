@@ -179,9 +179,18 @@ body{
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
           <li><a href="index.jsp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HOME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
-        
-      
-       <li><a href="buyacar.jsp"> BUY A CAR &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+       <li><a href="buyacar.jsp"> BUY A CAR </a></li>
+       <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="marutisuzuki.jsp">MARUTI SUZUKI</a></li>
+          <li><a href="renault.jsp">RENAULT</a></li>
+          <li><a href="hyundai.jsp">HYUNDAI</a></li>
+          <li><a href="tata.jsp">TATA</a></li>
+          <li><a href="ViewPatientData">USED CARS</a></li>
+        </ul>
+      </li>
        <li><a href="sellacar.jsp">SELL CAR &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
         <li><a href="aboutus.jsp">ABOUT US&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
         <li><a href="contactus.jsp">CONTACT US&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>

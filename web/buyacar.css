@@ -10,10 +10,10 @@ and open the template in the editor.
 
 /* Style the tab buttons */
 .navbar {
-    display: block;
-  position: absolute;
-  width: 100%;
+  position: fixed;
   z-index: 1;
+  width: 100%;
+  top: 0%;
 }
 .fa {
     padding: 10px;

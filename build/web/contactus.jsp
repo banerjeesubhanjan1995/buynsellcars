@@ -398,11 +398,18 @@ label{
 	background-image: url('http://www.geertjanhendriks.nl/codepen/form/octo-error.png');
 	color: red;
 }
+.navbar {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  top: 0%;
+}
 </style>
 </head>
 <body>
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-  <nav class="navbar navbar-default">
+    <div class="navbar">
+    <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
        <img src="pics/wings3.png" width="135" height="58" alt="Header Image" style="float: left;display: inline"/>
@@ -439,7 +446,7 @@ label{
     </div>
   </div>
          </nav> 
-    
+    </div>
     <img class="cover" src="pics/c.jpg">
 
     

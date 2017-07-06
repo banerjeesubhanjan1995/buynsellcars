@@ -20,6 +20,7 @@
     </head>
     <body>
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> 
+    <div class="navbar">
          <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -56,7 +57,7 @@
       </ul>     
     </div>
   </div>
-         </nav> 
+         </nav> </div><br><br><br>
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -1316,7 +1317,7 @@ btn.onclick = function() {
     <h2>WAGON R</h2>
     <p class="title">&#8377; 4.2 Lakhs onwards</p>
     <p>Avg.Ex-Showroom</p>
-   <p><button class="cars" onclick="window.open('index.html')">EXPLORE</button></p>
+   <p><button class="cars" onclick="location.reload();location.href='bookacar.jsp'">BOOK NOW</button></p>
   </div>
 </div> 
     </div>
@@ -1327,7 +1328,7 @@ btn.onclick = function() {
     <h2>RITZ</h2>
     <p class="title">&#8377; 4.3 Lakhs onwards</p>
     <p>Avg.Ex-Showroom</p>
-   <p><button class="cars" onclick="window.open('index.html')">EXPLORE</button></p>
+   <p><button class="cars" onclick="location.reload();location.href='bookacar.jsp'">BOOK NOW</button></p>
   </div>
 </div>
          
@@ -1339,7 +1340,7 @@ btn.onclick = function() {
     <h2>SWIFT</h2>
     <p class="title">&#8377; 4.8 Lakhs onwards</p>
     <p>Avg.Ex-Showroom</p>
-   <p><button class="cars" onclick="window.open('index.html')">EXPLORE</button></p>
+   <p><button class="cars" onclick="location.reload();location.href='bookacar.jsp'">BOOK NOW</button></p>
     </div>  
   </div>
  </div>  
@@ -1353,7 +1354,7 @@ btn.onclick = function() {
       <h2>DZIRE</h2>
     <p class="title">&#8377; 5.5 Lakhs onwards</p>
     <p>Avg.Ex-Showroom</p>
-   <p><button class="cars" onclick="window.open('index.html')">EXPLORE</button></p>
+   <p><button class="cars" onclick="location.reload();location.href='bookacar.jsp'">BOOK NOW</button></p>
   </div>
 </div> 
     </div>
@@ -1364,7 +1365,7 @@ btn.onclick = function() {
     <h2>ERTIGA</h2>
     <p class="title">&#8377; 7.4 Lakhs onwards</p>
     <p>Avg.Ex-Showroom</p>
-   <p><button class="cars" onclick="window.open('index.html')">EXPLORE</button></p>
+   <p><button class="cars" onclick="location.reload();location.href='bookacar.jsp'">BOOK NOW</button></p>
   </div>
 </div>
          
@@ -1376,7 +1377,7 @@ btn.onclick = function() {
     <h2>VITARA BREZZA</h2>
     <p class="title">&#8377; 8.2 Lakhs onwards</p>
     <p>Avg.Ex-Showroom</p>
-   <p><button class="cars" onclick="window.open('index.html')">EXPLORE</button></p>
+   <p><button class="cars" onclick="location.reload();location.href='bookacar.jsp'">BOOK NOW</button></p>
     </div>  
   </div>
  </div>  
@@ -1407,7 +1408,7 @@ btn.onclick = function() {
       <h2>S-CROSS</h2>
     <p class="title">&#8377; 8.0 Lakhs onwards</p>
     <p>Avg.Ex-Showroom</p>
-   <p><button class="cars" onclick="window.open('index.html')">EXPLORE</button></p>
+   <p><button class="cars" onclick="location.reload();location.href='bookacar.jsp'">BOOK NOW</button></p>
   </div>
 </div> 
     </div>
@@ -1418,7 +1419,7 @@ btn.onclick = function() {
     <h2>CIAZ</h2>
     <p class="title">&#8377; 7.7 Lakhs onwards</p>
     <p>Avg.Ex-Showroom</p>
-   <p><button class="cars" onclick="window.open('index.html')">EXPLORE</button></p>
+   <p><button class="cars" onclick="location.reload();location.href='bookacar.jsp'">BOOK NOW</button></p>
   </div>
 </div>
          
@@ -1430,7 +1431,7 @@ btn.onclick = function() {
     <h2>BALENO RS</h2>
     <p class="title">&#8377; 8.7 Lakhs onwards</p>
     <p>Avg.Ex-Showroom</p>
-   <p><button class="cars" onclick="window.open('index.html')">EXPLORE</button></p>
+   <p><button class="cars" onclick="location.reload();location.href='bookacar.jsp'">BOOK NOW</button></p>
     </div>  
   </div>
  </div>  
@@ -1445,10 +1446,419 @@ btn.onclick = function() {
       <h2>BALENO</h2>
     <p class="title">&#8377; 5.3 Lakhs onwards</p>
     <p>Avg.Ex-Showroom</p>
-   <p><button class="cars" onclick="window.open('index.html')">EXPLORE</button></p>
+   <p><button class="cars" id="myBtn4">EXPLORE</button></p>
+   
+    <!-- The Modal -->
+<div id="myModal4" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+        <script>
+        
+  // Get the modal
+var modal4 = document.getElementById('myModal4');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn4");
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal4.style.display = "block";
+};
+    </script>
+     <span class="close" onclick="document.getElementById('myModal4').style.display='none'">&times;</span>
+      <img src="cars/8.jpg" width="100%" height="100%">
+    </div>
+    <div class="modal-body">
+        <div class="container">
+  <div class="row">
+    <div class="col-sm-6"> 
+        <h1>NEXA BALENO</h1>
+        <h4>Petrol: 21.4 Km/l&nbsp;&nbsp;&nbsp;Diesel: 27.4 Km/l</h4>
+        <div class="dropdown">
+            <span><h4>See All Prices</h4></span>
+  <div class="dropdown-content">
+      <table>
+  <thead>
+    <tr>
+      <th>VARIANT</th>
+      <th>PETROL</th>
+      <th>DIESEL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td><strong>Sigma</strong></td>
+      <td>₹ 5.37 Lakhs</td>
+      <td>₹ 6.53 Lakhs</td>
+    </tr>
+    <tr>
+      <td><strong>Delta</strong></td>
+      <td>₹ 6.06 Lakhs </td>
+      <td>₹ 7.2 Lakhs</td>
+    </tr>
+    <tr>
+      <td><strong>Zeta</strong></td>
+      <td>₹ 6.67 Lakhs</td>
+      <td>₹ 7.82 Lakhs</td>
+    </tr>
+    <tr>
+      <td><strong>Alpha</strong></td>
+      <td>₹ 7.38 Lakhs</td>
+      <td>₹ 8.54 Lakhs</td>
+    </tr>			
+  </tbody>
+</table>
+  </div>
+</div>
+       
+    </div>
+      <div class="col-sm-6"><br>
+         <button class="button9 button4" onclick="location.reload();location.href='bookacar.jsp'">BOOK NOW</button>&nbsp;&nbsp;&nbsp;&nbsp;
+         <button class="button9 button4" onclick="location.reload();location.href='testdrive.jsp'">BOOK A TEST DRIVE</button>
+      </div></div></div>
+        
+                <div id="myCarousel4" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel4" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel4" data-slide-to="1"></li>
+    <li data-target="#myCarousel4" data-slide-to="2"></li>
+    <li data-target="#myCarousel4" data-slide-to="3"></li>
+    <li data-target="#myCarousel4" data-slide-to="4"></li>
+    <li data-target="#myCarousel4" data-slide-to="5"></li>
+    <li data-target="#myCarousel4" data-slide-to="6"></li>
+    <li data-target="#myCarousel4" data-slide-to="7"></li>
+    <li data-target="#myCarousel4" data-slide-to="8"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="cars/4.jpg" alt="">
+    </div>
+
+    <div class="item">
+        <img src="cars/1.jpg" alt="">
+    </div>
+<div class="item">
+    <img src="cars/2.jpg" alt="">
+    </div>
+      <div class="item">
+      <img src="cars/3.jpg" alt="">
+    </div>
+      <div class="item">
+          <img src="cars/5.jpg">
+    </div> 
+      <div class="item">
+      <img src="cars/6.jpg" alt="">
+    </div>
+      <div class="item">
+      <img src="cars/7.jpg" alt="">
+    </div>
+      <div class="item">
+      <img src="cars/9.jpg" alt="">
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel4" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel4" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div> 
+        <h2 class="text-left">SPECIFICATIONS</h2>
+      <div class="panel-group" id="accordion4">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion4" href="#collapse4a1"><h4>ENGINE</h4></a>
+        </h4>
+      </div>
+      <div id="collapse4a1" class="panel-collapse collapse in">
+          <div class="panel-body">
+<table class="table-fill">
+<thead>
+<tr>
+<th>ENGINE</th>
+<th>PETROL</th>
+<th>DIESEL</th>
+</tr>
+</thead>
+<tbody class="table-hover">
+<tr>
+<td class="text-left">Volume</td>
+<td>1197 cc</td>
+<td>1248 cc</td>
+</tr>
+<tr>
+<td class="text-left">Camshaft</td>
+<td>DOHC</td>
+<td>DOHC</td>
+</tr>
+<tr>
+<td class="text-left">No Of Cylinders</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr>
+<td class="text-left">Maximum Torque</td>
+<td>115/4000 Nm@rpm</td>
+<td>190/2000 Nm@rpm</td>
+</tr>
+<tr>
+<td class="text-left">Maximum Power</td>
+<td>62/6000 Kw@rpm</td>
+<td>55.2/4000 Kw@rpm</td>
+</tr>
+</tbody>
+</table>         
+          </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion4" href="#collapse4b1"><h4>TRANSMISSION</h4></a>
+        </h4>
+      </div>
+      <div id="collapse4b1" class="panel-collapse collapse">
+          <div class="panel-body">
+          <table class="table-fill">
+<thead>
+<tr>
+<th>TRANSMISSION</th>
+<th>PETROL</th>
+<th>DIESEL</th>
+</tr>
+</thead>
+<tbody class="table-hover">
+<tr>
+<td class="text-left">Transmission</td>
+<td>5MT/CVT</td>
+<td>5MT</td>
+</tr>
+</tbody>
+</table>               
+          </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion4" href="#collapse4c"><h4>DIMENSIONS</h4></a>
+        </h4>
+      </div>
+      <div id="collapse4c" class="panel-collapse collapse">
+          <div class="panel-body">
+           <table class="table-fill">
+<thead>
+<tr>
+<th>DIMENSIONS</th>
+<th>PETROL</th>
+<TH>DIESEL</TH>
+</tr>
+</thead>
+<tbody class="table-hover">
+<tr>
+<td class="text-left">Overall Length</td>
+<td>3995 mm</td>
+<td>3995 mm</td>
+</tr>
+<tr>
+<td class="text-left">Overall Width</td>
+<td>1745 mm</td>
+<td>1745 mm</td>
+</tr>
+<tr>
+<td class="text-left">Overall Height</td>
+<td>1510 mm</td>
+<td>1510 mm</td>
+</tr>
+<tr>
+<td class="text-left">Wheelbase</td>
+<td>2520 mm</td>
+<td>2520 mm</td>
+</tr>
+<tr>
+    <td class="text-left">Boot Space</td>
+    <td>339</td>
+    <td>339</td>
+</tr>
+</tbody>
+</table>    
+     </div>
+      </div>
+    </div>  
+           <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion4" href="#collapse4d"><h4>WEIGHT</h4></a>
+        </h4>
+      </div>
+      <div id="collapse4d" class="panel-collapse collapse">
+          <div class="panel-body">
+           <table class="table-fill">
+<thead>
+<tr>
+<th>WEIGHT</th>
+<th>PETROL</th>
+<th>DIESEL</th>
+</tr>
+</thead>
+<tbody class="table-hover">
+<tr>
+    <td class="text-left">Kerb Weight(Kg)</td>
+    <td>865-890(MT),910-935(CVT)</td>
+    <TD>960-985</TD>
+</tr>
+<tr>
+<td class="text-left">Gross Vehicle Weight(Kg)</td>
+<td>1340(MT),1360(CVT)</td>
+<td>1430</td>
+</tr>
+</tbody>
+</table>    
+     </div>
+      </div>
+    </div>   
+           <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion4" href="#collapse4e"><h4>BRAKES</h4></a>
+        </h4>
+      </div>
+      <div id="collapse4e" class="panel-collapse collapse">
+          <div class="panel-body">
+           <table class="table-fill">
+<thead>
+<tr>
+<th>BRAKES</th>
+<th>PETROL</th>
+<th>DIESEL</th>
+</tr>
+</thead>
+<tbody class="table-hover">
+<tr>
+<td class="text-left">Front</td>
+<td>Disc</td>
+<td>Disc</td>
+</tr>
+<tr>
+<td class="text-left">Rear</td>
+<td>Drum</td>
+<td>Drum</td>
+</tr>
+</tbody>
+</table>    
+     </div>
+      </div>
+    </div>   
+           <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion4" href="#collapse4f"><h4>SUSPENSION SYSTEM</h4></a>
+        </h4>
+      </div>
+      <div id="collapse4f" class="panel-collapse collapse">
+          <div class="panel-body">
+           <table class="table-fill">
+<thead>
+<tr>
+<th>SUSPENSION SYSTEM</th>
+<th>PETROL</th>
+<th>DIESEL</th>
+</tr>
+</thead>
+<tbody class="table-hover">
+<tr>
+<td class="text-left">Front</td>
+<td>McPhersion Strut</td>
+<td>McPhersion Strut</td>
+</tr>
+<tr>
+<td class="text-left">Rear</td>
+<td>Torsion</td>
+<td>Torsion</td>
+</tr>
+</tbody>
+</table>    
+     </div>
+      </div>
+    </div>
+          <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion4" href="#collapse4g"><h4>TYRES</h4></a>
+        </h4>
+      </div>
+      <div id="collapse4g" class="panel-collapse collapse">
+          <div class="panel-body">
+           <table class="table-fill">
+<thead>
+<tr>
+<th>TYRES</th>
+<th>PETROL</th>
+<th>DIESEL</th>
+</tr>
+</thead>
+<tbody class="table-hover">
+<tr>
+<td class="text-left">Tyre Size</td>
+<td>185/60 R15<BR>195/55 R16</td>
+<td>185/60 R15<BR>195/55 R16</td>
+</tr>
+</tbody>
+</table>    
+     </div>
+      </div>
+    </div>
+          <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion4" href="#collapse4h"><h4>CAPACITY</h4></a>
+        </h4>
+      </div>
+      <div id="collapse4h" class="panel-collapse collapse">
+          <div class="panel-body">
+           <table class="table-fill">
+<thead>
+<tr>
+<th>CAPACITY</th>
+<th>PETROL</th>
+<th>DIESEL</th>
+</tr>
+</thead>
+<tbody class="table-hover">
+<tr>
+<td class="text-left">Seating</td>
+<td>5 Persons</td>
+<td>5 Persons</td>
+</tr>
+<tr>
+<td class="text-left">Fuel Tank</td>
+<td>37 Litres</td>
+<td>37 Litres</td>
+</tr>
+</tbody>
+</table>    
+     </div>
+      </div>
+    </div>
+      </div></div>
+ 
+      <footer>
+     <b>&copy;&nbsp;NIITian<br>
+          &reg;&nbsp;AutoWings Pvt.Ltd<br>
+          &reg;&nbsp;SUBHANJAN BANERJEE</b>
+      </footer>
   </div>
 </div> 
-    </div>
+  </div></div></div>
 <div class="col-sm-6">
  <div class="card">
   <img src="pics/Ignis.jpg" alt="" style="width:100%">
@@ -1456,7 +1866,7 @@ btn.onclick = function() {
     <h2>IGNIS</h2>
     <p class="title">&#8377; 4.6 Lakhs onwards</p>
     <p>Avg.Ex-Showroom</p>
-   <p><button class="cars" onclick="window.open('index.html')">EXPLORE</button></p>
+   <p><button class="cars" onclick="location.reload();location.href='bookacar.jsp'">BOOK NOW</button></p>
   </div>
 </div>       
 </div></div></div><br>

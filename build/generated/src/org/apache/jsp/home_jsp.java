@@ -57,6 +57,11 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n");
       out.write("<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>\n");
       out.write("  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>\n");
+      out.write("  <script>\n");
+      out.write("      function Validate(uLogin) {\n");
+      out.write("    uLogin.value = uLogin.value.replace(/[^a-z A-Z-'\\n\\r.]+/g, '');\n");
+      out.write("}\n");
+      out.write("  </script>\n");
       out.write("<style>\n");
       out.write("body,h1,h2,h3,h4,h5,h6 {\n");
       out.write("    font-family: \"Raleway\";\n");
@@ -182,10 +187,10 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t</div> <!-- /.modal-header -->\n");
       out.write("\n");
       out.write("\t\t\t<div class=\"modal-body\">\n");
-      out.write("                            <form method=\"post\" action=\"login.jsp\">\n");
+      out.write("                            <form method=\"post\" action=\"login.jsp\" autocomplete=\"off\">\n");
       out.write("\t\t\t\t\t<div class=\"form-group\">\n");
       out.write("\t\t\t\t\t\t<div class=\"input-group\">\n");
-      out.write("                                                    <input type=\"text\" name=\"name\" required=\"required\" class=\"form-control\" id=\"uLogin\" placeholder=\"Name\">\n");
+      out.write("                                                    <input type=\"text\" name=\"name\" required=\"required\" class=\"form-control\" id=\"uLogin\" onkeyup = \"Validate(this)\" placeholder=\"Name\">\n");
       out.write("\t\t\t\t\t\t\t<label for=\"uLogin\" class=\"input-group-addon glyphicon glyphicon-user\"></label>\n");
       out.write("\t\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t\t</div> <!-- /.form-group -->\n");

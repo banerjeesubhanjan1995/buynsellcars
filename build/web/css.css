@@ -173,10 +173,10 @@ img.maruti{
    margin-left: 50px
 }
 .navbar {
-  
- display: block;
   position: fixed;
-  top: 0;
+  z-index: 1;
   width: 100%;
+  top: 0%;
 }
+
 
